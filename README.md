@@ -1,7 +1,7 @@
 ### Two Sigma Challenge
 
 📈 **Predicting Short-Term Realized Volatility in the Financial Markets: A Quantitative Analysis Using High-Frequency Trading Data**
-
+---
 ### Table of Contents
 1. 📝 [Abstract](#abstract)
 2. 🎯 [Introduction](#introduction)
@@ -47,6 +47,9 @@ Each model's performance is rigorously evaluated using a validation set, and ens
 ### 🏁 Conclusion
 🎯 This research marks a significant step forward in the field of financial market analytics, particularly in predicting short-term stock volatility using high-frequency trading data. By integrating advanced machine learning techniques and statistical models, we have developed robust forecasting tools that enhance the precision and reliability of financial product pricing and risk management. The success of our ensemble approach demonstrates the value of combining diverse predictive models to tackle complex, real-world challenges in financial markets. Moving forward, continuous refinement and adaptation of these models will be essential to keep pace with the evolving market conditions, aiming to provide even more precise volatility forecasts in the financial sector. This study not only contributes to academic knowledge but also offers practical tools for traders and financial analysts striving to navigate the complexities of modern financial environments.
 
+---
+
+Feel free to reach out at [adityasaxena@g.harvard.edu](mailto:adityasaxena@g.harvard.edu) for more insights or potential collaboration! 🤝 Happy trading and analyzing! 📊🚀
 
 
 
