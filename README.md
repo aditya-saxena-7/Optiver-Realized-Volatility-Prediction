@@ -14,7 +14,10 @@
 9. 🏁 [Conclusion](#conclusion)
 
 ### Abstract
-📉 In this study, we endeavor to predict short-term volatility in stock prices, utilizing high-resolution financial data from the Nasdaq-Closing-Price-Prediction Challenge hosted by Optiver on Kaggle. Our models forecast the realized volatility over 10-minute intervals for various stocks across multiple sectors. By employing advanced quantitative techniques and machine learning algorithms on order book and trades data, this research aims to enhance the accuracy and reliability of volatility predictions. These predictions are vital for the pricing of options and other derivative products. The effectiveness of our models is assessed using the root mean square percentage error (RMSPE).
+---
+🔍 In this rigorous investigation, we aim to forecast short-term volatility within stock markets, leveraging the granular, high-resolution financial dataset provided by the Nasdaq-Closing-Price-Prediction Challenge, facilitated by Optiver on Kaggle. Our analytical models intricately predict the realized volatility across discrete 10-minute intervals for a broad spectrum of stocks across various industry sectors. Utilizing cutting-edge quantitative methodologies and sophisticated machine learning algorithms applied to detailed order book and trades data, this research endeavors to substantially enhance both the accuracy and reliability of volatility predictions. These prognostications are indispensable for the astute pricing of options and other financial derivatives. 
+
+The efficacy of our predictive models is meticulously evaluated using the Root Mean Square Percentage Error (RMSPE), ensuring a robust assessment of their predictive power. 📈
 
 ### Introduction
 🌍 The dynamic nature of financial markets makes understanding and predicting short-term price movements a crucial aspect of financial risk management and trading. Particularly, the prediction of realized volatility—over short intervals such as 10 minutes—plays a pivotal role in the structuring and pricing of financial derivatives. This project taps into the rich dataset provided by the Nasdaq-Closing-Price-Prediction Challenge, which offers detailed insights into the microstructure of financial markets through one-second snapshots of order book and executed trades. 
