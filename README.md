@@ -3,15 +3,15 @@
 📈 **Predicting Short-Term Realized Volatility in the Financial Markets: A Quantitative Analysis Using High-Frequency Trading Data**
 
 ### Table of Contents
-1. [📝 Abstract](#abstract)
-2. [🎯 Introduction](#introduction)
-3. [📚 Literature Review](#literature-review)
-4. [🔍 Methodology](#methodology)
-5. [🧠 Model Development](#model-development)
-6. [📊 Evaluation](#evaluation)
-7. [🗃️ Data Citation](#data-citation)
-8. [📈 Results and Discussion](#results-and-discussion)
-9. [🏁 Conclusion](#conclusion)
+1. 📝 [Abstract](#abstract)
+2. 🎯 [Introduction](#introduction)
+3. 📚 [Literature Review](#literature-review)
+4. 🔍 [Methodology](#methodology)
+5. 🧠 [Model Development](#model-development)
+6. 📊 [Evaluation](#evaluation)
+7. 🗃️ [Data Citation](#data-citation)
+8. 📈 [Results and Discussion](#results-and-discussion)
+9. 🏁 [Conclusion](#conclusion)
 
 ### Abstract
 📉 In this study, we endeavor to predict short-term volatility in stock prices, utilizing high-resolution financial data from the Nasdaq-Closing-Price-Prediction Challenge hosted by Optiver on Kaggle. Our models forecast the realized volatility over 10-minute intervals for various stocks across multiple sectors. By employing advanced quantitative techniques and machine learning algorithms on order book and trades data, this research aims to enhance the accuracy and reliability of volatility predictions. These predictions are vital for the pricing of options and other derivative products. The effectiveness of our models is assessed using the root mean square percentage error (RMSPE).
