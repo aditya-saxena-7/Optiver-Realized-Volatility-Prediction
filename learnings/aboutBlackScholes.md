@@ -1,5 +1,8 @@
 # Black-Scholes Model Curriculum 📘
 
+- [Introduction to the Black-Scholes formula | Finance & Capital Markets | Khan Academy](https://youtu.be/pr-u4LCFYEY?si=dwPt29mtEvlmr6KP)
+- [A Black-Scholes World Playlist](https://youtu.be/6LhV32OIZ1Y?si=yspeuyFyKU4y5x2T)
+
 ## Introduction and History 🏛️
 
 The Black-Scholes model, also known as the Black-Scholes-Merton (BSM) model, is a fundamental concept in modern financial theory introduced in 1973 by Fischer Black, Myron Scholes, and, independently, Robert Merton. This model provided the first widely adopted mathematical framework for pricing European-style options and is the cornerstone of financial engineering, risk management, and quantitative analysis.
