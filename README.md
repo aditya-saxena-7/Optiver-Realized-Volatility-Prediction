@@ -17,9 +17,13 @@
 
 ---
 
-In this rigorous investigation, we aim to forecast short-term volatility within stock markets, leveraging the granular, high-resolution financial dataset provided by the Realized Volatility Prediction Challenge, facilitated by Optiver on Kaggle. Our analytical models intricately predict the realized volatility across discrete 10-minute intervals for a broad spectrum of stocks across various industry sectors. Utilizing cutting-edge quantitative methodologies and sophisticated machine learning algorithms applied to detailed order book and trades data, this research endeavors to substantially enhance both the accuracy and reliability of volatility predictions. These prognostications are indispensable for the astute pricing of options and other financial derivatives. 
+Volatility is one of the most prominent terms you’ll hear on any trading floor – and for good reason. In financial markets, volatility captures the amount of fluctuation in prices. High volatility is associated to periods of market turbulence and to large price swings, while low volatility describes more calm and quiet markets. For trading firms like Optiver, accurately predicting volatility is essential for the trading of options, whose price is directly related to the volatility of the underlying product.
 
-The efficacy of our predictive models is meticulously evaluated using the Root Mean Square Percentage Error (RMSPE), ensuring a robust assessment of their predictive power. 📈
+As a leading global electronic market maker, Optiver is dedicated to continuously improving financial markets, creating better access and prices for options, ETFs, cash equities, bonds and foreign currencies on numerous exchanges around the world. Optiver’s teams have spent countless hours building sophisticated models that predict volatility and continuously generate fairer options prices for end investors. However, an industry-leading pricing algorithm can never stop evolving, and there is no better place than Kaggle to help Optiver take its model to the next level.
+
+In the first three months of this competition, you’ll build models that predict short-term volatility for hundreds of stocks across different sectors. You will have hundreds of millions of rows of highly granular financial data at your fingertips, with which you'll design your model forecasting volatility over 10-minute periods. Your models will be evaluated against real market data collected in the three-month evaluation period after training.
+
+Through this competition, you'll gain invaluable insight into volatility and financial market structure. You'll also get a better understanding of the sort of data science problems Optiver has faced for decades. We look forward to seeing the creative approaches the Kaggle community will apply to this ever complex but exciting trading challenge. 📈
 
 ### 🌍 Introduction
 
