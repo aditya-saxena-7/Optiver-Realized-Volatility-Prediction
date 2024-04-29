@@ -102,4 +102,11 @@ You own 100 shares of Company MNO, which is currently trading at $75 per share. 
 - **Time Decay**: Options lose value as they approach their expiration date, which can erode potential profits.
 - **Risk of Loss**: While the initial investment might be small, the potential for losses, especially with certain speculative strategies, can be substantial.
 
+Resources:
+
+- [What are Options?](https://youtu.be/CRhGikRHSu8?si=FJ2dYdzfNymi9Yd-)
+- [Basics of FnO](https://youtu.be/oZ12CvQh7tM?si=DGHAq-tk_yAxyBnS)
+- [Option Trading For Beginners](https://youtu.be/M86YwBWxygI?si=8sRiQAKJniAjI7Ze)
+- [What are Put options?](https://youtu.be/npjO-c4abBk?si=ZpzxzvSGe6ZbepN7)
+
 Options, with their various types and usage strategies, require a well-thought-out approach and a clear understanding of their inherent risks and benefits. Always consider consulting with a financial expert to tailor options trading strategies to your financial situation and goals. 📊📘
