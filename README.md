@@ -17,7 +17,7 @@
 
 ---
 
-In this rigorous investigation, we aim to forecast short-term volatility within stock markets, leveraging the granular, high-resolution financial dataset provided by the Nasdaq-Closing-Price-Prediction Challenge, facilitated by Optiver on Kaggle. Our analytical models intricately predict the realized volatility across discrete 10-minute intervals for a broad spectrum of stocks across various industry sectors. Utilizing cutting-edge quantitative methodologies and sophisticated machine learning algorithms applied to detailed order book and trades data, this research endeavors to substantially enhance both the accuracy and reliability of volatility predictions. These prognostications are indispensable for the astute pricing of options and other financial derivatives. 
+In this rigorous investigation, we aim to forecast short-term volatility within stock markets, leveraging the granular, high-resolution financial dataset provided by the Realized Volatility Prediction Challenge, facilitated by Optiver on Kaggle. Our analytical models intricately predict the realized volatility across discrete 10-minute intervals for a broad spectrum of stocks across various industry sectors. Utilizing cutting-edge quantitative methodologies and sophisticated machine learning algorithms applied to detailed order book and trades data, this research endeavors to substantially enhance both the accuracy and reliability of volatility predictions. These prognostications are indispensable for the astute pricing of options and other financial derivatives. 
 
 The efficacy of our predictive models is meticulously evaluated using the Root Mean Square Percentage Error (RMSPE), ensuring a robust assessment of their predictive power. 📈
 
@@ -25,7 +25,7 @@ The efficacy of our predictive models is meticulously evaluated using the Root M
 
 ---
 
-The inherently dynamic nature of financial markets necessitates a profound understanding and precise prediction of short-term price fluctuations, pivotal for effective financial risk management and trading strategies. Specifically, the prediction of realized volatility within concise intervals, such as 10 minutes, is essential for the strategic structuring and accurate pricing of financial derivatives. This project leverages the comprehensive dataset from the Nasdaq-Closing-Price-Prediction Challenge, hosted by Optiver on Kaggle, which provides intricate insights into the microstructure of the financial markets captured through one-second snapshots of order book data and executed trades.
+The inherently dynamic nature of financial markets necessitates a profound understanding and precise prediction of short-term price fluctuations, pivotal for effective financial risk management and trading strategies. Specifically, the prediction of realized volatility within concise intervals, such as 10 minutes, is essential for the strategic structuring and accurate pricing of financial derivatives. This project leverages the comprehensive dataset from the Optiver Realized Volatility Prediction, on Kaggle, which provides intricate insights into the microstructure of the financial markets captured through one-second snapshots of order book data and executed trades.
 
 🚀 Focusing on these high-frequency data points, our research endeavors to forge robust predictive models and simultaneously enrich the broader field of financial analytics by refining the accuracy of short-term volatility forecasts. Such forecasts are crucial, underpinning a wide array of financial decisions that range from day trading strategies to the hedging of intricate financial portfolios, thereby enhancing the decision-making processes within dynamic market environments. 📈
 
@@ -61,9 +61,9 @@ To accurately assess the performance of our volatility prediction models, we emp
 
 ---
 
-The data used in this project is sourced from the "Nasdaq-Closing-Price-Prediction Challenge," an Optiver Case Study available on Kaggle. This dataset is critical for our analysis as it provides high-resolution insights into the micro-structure of the financial markets, including order book snapshots and executed trades data, which are pivotal for our predictive modeling.
+The data used in this project is sourced from the "Optiver Realized Volatility Prediction," available on Kaggle. This dataset is critical for our analysis as it provides high-resolution insights into the micro-structure of the financial markets, including order book snapshots and executed trades data, which are pivotal for our predictive modeling.
 
-Tom Forbes, John Macgillivray, Matteo Pietrobon, Sohier Dane, Maggie Demkin. (2023). [Optiver - Trading at the Close](https://kaggle.com/competitions/optiver-trading-at-the-close).
+Tom Forbes, John Macgillivray, Matteo Pietrobon, Sohier Dane, Maggie Demkin. (2023). [Optiver - Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview).
 
 ### 📈 Results and Discussion
 
