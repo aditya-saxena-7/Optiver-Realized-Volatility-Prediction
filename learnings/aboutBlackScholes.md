@@ -2,6 +2,7 @@
 
 - [Introduction to the Black-Scholes formula | Finance & Capital Markets | Khan Academy](https://youtu.be/pr-u4LCFYEY?si=dwPt29mtEvlmr6KP)
 - [A Black-Scholes World Playlist](https://youtu.be/6LhV32OIZ1Y?si=yspeuyFyKU4y5x2T)
+- [Black Scholes Option Pricing Model Explained In Excel](https://youtu.be/J6OySvT-PDE?si=Fz1tlARw6_zgz6w1)
 
 ## Introduction and History 🏛️
 
@@ -22,6 +23,20 @@ The revolutionary aspect of the Black-Scholes model was its ability to derive a 
 - **Time to Expiry (T):** The time remaining until the option's expiry date.
 - **Volatility (σ):** The measure of the stock's price fluctuations.
 - **Risk-Free Rate (r):** The theoretical rate of return of an investment with no risk of financial loss.
+
+The risk-free rate in finance represents the rate of return of an investment with zero risk of financial loss. This theoretical rate is key to various financial calculations and models, including the Black-Scholes formula for option pricing and the capital asset pricing model (CAPM). It serves as the minimum return investors expect for any investment, since they would not accept additional risk without potentially higher returns.
+
+Here are a few key points about the risk-free rate:
+
+1. **Benchmark for Other Investments:** The risk-free rate is used as a benchmark to evaluate the performance of other assets. By comparing the returns of risky assets to the risk-free rate, investors and analysts can assess the additional risk premium they require to invest in riskier assets.
+
+2. **Government Securities:** Typically, the risk-free rate is associated with the yield on government securities such as U.S. Treasury bills (T-bills) or bonds, which are considered risk-free in the currency in which they are denominated. This is because it is assumed that these governments are not likely to default on their debt.
+
+3. **Impacts on Financial Models:** In financial models and valuation techniques, the risk-free rate is used to discount future cash flows back to their present value. This is crucial in determining the fair value of investments and in strategic financial planning.
+
+4. **Economic Indicator:** Changes in the risk-free rate can indicate shifts in monetary policy and economic conditions. For example, central banks may adjust policy rates to influence economic activity, affecting the risk-free rate and, consequently, investment and consumption patterns.
+
+The risk-free rate is a fundamental component in the pricing of financial assets and in risk management strategies, reflecting the time value of money in the safest investment available.
 
 ### Formula
 The Black-Scholes formula for a European call option is given by:
