@@ -102,6 +102,40 @@ You own 100 shares of Company MNO, which is currently trading at $75 per share. 
 - **Time Decay**: Options lose value as they approach their expiration date, which can erode potential profits.
 - **Risk of Loss**: While the initial investment might be small, the potential for losses, especially with certain speculative strategies, can be substantial.
 
+# Overview of Options Participants
+
+Options trading involves four main participants: call buyers, call sellers, put buyers, and put sellers. Each plays a distinct role with specific rights and obligations.
+
+## Call Buyer
+A **call buyer** purchases the right to buy an underlying asset at a specified strike price within a set period. The call buyer is optimistic, believing the asset's price will rise above the strike price before the option expires.
+
+### Example:
+- An investor buys a call option on Stock X, trading at $50, with a strike price of $55.
+- **Scenario**: If Stock X rises to $60, the investor can exercise the option to buy at $55, gaining an immediate profit on each share minus the premium paid.
+
+## Call Seller
+A **call seller** (or call writer) sells the call option, collecting the premium, and has the obligation to sell the underlying asset at the strike price if the option is exercised by the buyer. Call sellers might be neutral or slightly bearish on the underlying asset.
+
+### Example:
+- An investor sells a call option on Stock Y with a strike price of $75, while the current price is $70.
+- **Scenario**: If Stock Y stays below $75, the option expires worthless, and the seller keeps the premium as profit. If it exceeds $75, the seller must sell the stock at $75, potentially missing out on higher profits.
+
+## Put Buyer
+A **put buyer** purchases the right to sell the underlying asset at a specified strike price within a set period. This is typically a bearish move, expecting the asset's price to fall below the strike price.
+
+### Example:
+- An investor buys a put option on Stock Z at a strike price of $20 while the current price is $25.
+- **Scenario**: If Stock Z drops to $15, the investor can exercise the option to sell at $20, securing a better selling price than the current market, minus the premium paid.
+
+## Put Seller
+A **put seller** (or put writer) sells the put option, taking on the obligation to buy the underlying asset at the strike price if the put buyer exercises the option. Put sellers are generally neutral to bullish on the asset, expecting it to stay the same or rise in price.
+
+### Example:
+- An investor sells a put option on Stock A with a strike price of $30 while the current price is $35.
+- **Scenario**: If Stock A stays above $30, the put expires worthless, and the seller keeps the premium. If it drops below $30, the seller must buy it at $30, potentially at a loss if the market price is lower.
+
+Each role in options trading offers different risks and rewards, aligning with various investment strategies and outlooks on market movements.
+
 Resources:
 
 - [What are Options?](https://youtu.be/CRhGikRHSu8?si=FJ2dYdzfNymi9Yd-)
