@@ -1,4 +1,4 @@
-### Two Sigma Challenge
+### Optiver x Kaggle Challenge
 ---
 📈 **Predicting Short-Term Realized Volatility in the Financial Markets: A Quantitative Analysis Using High-Frequency Trading Data**
 ---
