@@ -43,20 +43,22 @@ Let’s dive into the fascinating world of volatility cones and historical data 
 
 ### Estimating Historical Volatility 🧮
 
-1. **Data Collection**: The analysis starts with collecting 15 months of stock price data from Yahoo! Finance for Nortel Networks (symbol "nt.to"). This comprehensive dataset allows for a detailed examination of stock volatility over various time periods.
+1. **Data Collection**: The analysis starts with collecting 15 months of stock price data from [Yahoo! Finance](http://finance.yahoo.com/) for Nortel Networks (symbol "nt.to"). This comprehensive dataset allows for a detailed examination of stock volatility over various time periods.
 
 2. **Calculating Volatility**:
    - **Formula Used**: Volatility is estimated using the formula:
 
    <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/formula.png" width=80%>
 
-   - **Annualization**: The factor \(\sqrt{252}\) is used to annualize the volatility, as there are typically 252 trading days in a year.
+   - **Annualization**: The factor "square toot of 252" is used to annualize the volatility, as there are typically 252 trading days in a year.
 
    - **S and N**: \(S\) represents the stock closing price, and \(N\) is the number of business days in the period under study (e.g., 20 days for 1 month, 60 days for 3 months, etc.).
 
 3. **Data Segmentation**: The analysis segments the data into different periods: 1, 3, 6, 9, and 12 months. This segmentation helps understand how volatility changes over different time horizons.
 
 ### Constructing the Volatility Cone 📈
+
+   <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/charts.png" width=80%>
 
 1. **Visual Representation**:
    - **Figure I**: The volatility cone is plotted, showing historical volatilities for various time spans against the days to option expiry. This visual helps identify the volatility pattern and compare it against current implied volatility.
@@ -68,10 +70,8 @@ Let’s dive into the fascinating world of volatility cones and historical data 
 
    - **Comparative Analysis**: By comparing historical and implied volatilities, traders can decide if an option is underpriced or overpriced based on its volatility. This is essential for making informed trading decisions.
 
-### Images Analysis 🖼️
+### Table Analysis 🖼️
 
-- **Image Content**: The images likely depict the volatility cone with overlaid data on historical and implied volatilities. These graphical representations are pivotal for visually analyzing volatility trends and making comparative assessments.
+   <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/table.png" width=80%>
 
-- **Practical Usage**: By using these charts, traders can visually assess where the current implied volatility stands in relation to past volatility. This can lead to strategies like buying options when implied volatilities are low (suggesting underpricing) and selling when they are high (suggesting overpricing).
 
-In summary, the volatility cone provides a dynamic and visually intuitive method to analyze volatility over time, helping traders make strategic decisions based on historical patterns and current market data. This method not only highlights trends but also enables traders to pinpoint potential opportunities or risks within the options market. 🌟📉📈
