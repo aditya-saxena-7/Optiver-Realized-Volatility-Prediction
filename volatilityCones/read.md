@@ -77,11 +77,7 @@ This chart, labeled "Figure I - Historical Volatility Cone of Nortel Networks as
 ### 4. **Volatility Cone**
    - The "cone" shape is formed by the outer bounds of the historical volatility, which taper as the days to expiry decrease. The cone's boundary lines are not explicitly drawn here but can be visualized as encompassing the highest and lowest points of the historical volatility, indicating the range in which the volatility typically resides.
 
-### 5. **Analysis and Use**
-   - **Comparison**: Traders can use this chart to compare current implied volatility with historical volatility at corresponding times to expiry. This helps in assessing whether the option is currently priced reasonably.
-   - **Trading Decisions**: If the implied volatility is significantly above the historical trend (not the case here as both lines are close), it might suggest the option is overpriced (a potential sell signal). Conversely, if it's below, the option might be underpriced (a potential buy signal).
-
-### 6. **Key Observations**
+### 5. **Key Observations**
    - Throughout most of the time period, the implied volatility closely tracks the lower range of historical volatility, suggesting that the market's expectations are leaning towards the less volatile end of historical observations.
 
 This chart is essential for options traders focusing on volatility strategies, such as those looking to capitalize on discrepancies between implied and historical volatilities.
