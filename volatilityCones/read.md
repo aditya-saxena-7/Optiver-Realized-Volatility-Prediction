@@ -47,7 +47,6 @@ Let’s dive into the fascinating world of volatility cones and historical data 
 
 2. **Calculating Volatility**:
    - **Formula Used**: Volatility is estimated using the formula:
-![VOLATILITY FORMULA](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/formula.png)
 
    <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/formula.png" width=80%>
 
