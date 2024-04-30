@@ -1,3 +1,6 @@
+# Trading Volatility Using Historical VolatilityCones
+---
+
 Volatility cones are a tool used by traders to assess whether the current implied volatility of options is high or low compared to historical volatilities over similar time frames. Here's how they work and why they're important in options trading: 📉📈
 
 ### Understanding Volatility Cones
@@ -35,3 +38,43 @@ Volatility cones are used to gauge if options are priced reasonably based on the
 Imagine you are analyzing an option on a stock with a current implied volatility suggesting significant fluctuations. By using a volatility cone, you can quickly check if this implied volatility is higher or lower compared to historical norms for the same time frame. If it’s higher, the options might be overpriced, and if it’s lower, they could be underpriced. This insight allows traders to make more informed decisions, potentially leading to profitable trading opportunities. 💸📊
 
 In essence, volatility cones offer a systematic way to evaluate the price fairness of options by aligning historical data with current market expectations, helping traders navigate the complex dynamics of options markets with greater confidence. 👍💡
+
+Let’s dive into the fascinating world of volatility cones and historical data using your research paper on Nortel Networks stock! 🌍📊
+
+### Estimating Historical Volatility 🧮
+
+1. **Data Collection**: The analysis starts with collecting 15 months of stock price data from Yahoo! Finance for Nortel Networks (symbol "nt.to"). This comprehensive dataset allows for a detailed examination of stock volatility over various time periods.
+
+2. **Calculating Volatility**:
+   - **Formula Used**: Volatility is estimated using the formula:
+
+     \[
+     \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (X_i - \bar{X})^2} \times \sqrt{252}
+     \]
+     where \(X_i = \ln(\frac{S_{i+1}}{S_i})\) (the natural logarithm of the ratio of successive closing prices).
+
+   - **Annualization**: The factor \(\sqrt{252}\) is used to annualize the volatility, as there are typically 252 trading days in a year.
+
+   - **S and N**: \(S\) represents the stock closing price, and \(N\) is the number of business days in the period under study (e.g., 20 days for 1 month, 60 days for 3 months, etc.).
+
+3. **Data Segmentation**: The analysis segments the data into different periods: 1, 3, 6, 9, and 12 months. This segmentation helps understand how volatility changes over different time horizons.
+
+### Constructing the Volatility Cone 📈
+
+1. **Visual Representation**:
+   - **Figure I**: The volatility cone is plotted, showing historical volatilities for various time spans against the days to option expiry. This visual helps identify the volatility pattern and compare it against current implied volatility.
+
+   - **Overlay of Data**: The graph includes an overlay of the 30-day historical volatility and the implied volatility of NT’s March 03, 4.500 call option. This comparison is crucial to determine if the current market conditions are typical or if there are anomalies.
+
+2. **Interpretation**:
+   - **Maximum, Mean, and Minimum**: These values represent the extreme, average, and lowest observed volatilities over the specified periods. They help traders gauge the volatility range and assess risk.
+
+   - **Comparative Analysis**: By comparing historical and implied volatilities, traders can decide if an option is underpriced or overpriced based on its volatility. This is essential for making informed trading decisions.
+
+### Images Analysis 🖼️
+
+- **Image Content**: The images likely depict the volatility cone with overlaid data on historical and implied volatilities. These graphical representations are pivotal for visually analyzing volatility trends and making comparative assessments.
+
+- **Practical Usage**: By using these charts, traders can visually assess where the current implied volatility stands in relation to past volatility. This can lead to strategies like buying options when implied volatilities are low (suggesting underpricing) and selling when they are high (suggesting overpricing).
+
+In summary, the volatility cone provides a dynamic and visually intuitive method to analyze volatility over time, helping traders make strategic decisions based on historical patterns and current market data. This method not only highlights trends but also enables traders to pinpoint potential opportunities or risks within the options market. 🌟📉📈
