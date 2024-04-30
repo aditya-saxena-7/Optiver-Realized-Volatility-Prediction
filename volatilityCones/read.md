@@ -47,11 +47,9 @@ Let’s dive into the fascinating world of volatility cones and historical data 
 
 2. **Calculating Volatility**:
    - **Formula Used**: Volatility is estimated using the formula:
+![VOLATILITY FORMULA](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/formula.png)
 
-     \[
-     \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (X_i - \bar{X})^2} \times \sqrt{252}
-     \]
-     where \(X_i = \ln(\frac{S_{i+1}}{S_i})\) (the natural logarithm of the ratio of successive closing prices).
+   <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/formula.png" width=80%>
 
    - **Annualization**: The factor \(\sqrt{252}\) is used to annualize the volatility, as there are typically 252 trading days in a year.
 
