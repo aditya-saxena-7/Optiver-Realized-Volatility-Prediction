@@ -74,4 +74,32 @@ Let’s dive into the fascinating world of volatility cones and historical data 
 
    <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/table.png" width=80%>
 
+The table you've shown, labeled as "Table I - Nortel Networks Stock Historical Volatilities," presents historical volatility data for various time horizons: 1-month, 3-month, 6-month, 9-month, and 12-month. Here's a detailed explanation and the insights we can derive from it:
 
+### Understanding the Table Structure
+- **Rows**: Each row represents a different period ending, from January 2004 back to November 2002. This provides a timeline of volatility data for each specified time frame.
+- **Columns**: Each column after the period ending indicates the calculated historical volatility for the respective time horizons (1-month through 12-month).
+
+### Key Figures in the Table
+- **Maximum, Mean, Minimum (Bottom Rows)**:
+  - These rows summarize the highest, average, and lowest historical volatilities observed for each time frame over the specified period. This summary provides a quick reference for understanding the range of volatility experienced by Nortel Networks' stock.
+  
+### Insights from the Table
+1. **Volatility Ranges**:
+   - **1-Month Volatility**: Shows a dramatic range from a low of 27.11% to a high of 127.96%. This indicates high short-term volatility fluctuations, which can be critical for short-term trading strategies.
+   - **Longer-Term Volatility**: As you look at longer durations (such as 9-months and 12-months), the volatility range narrows (e.g., 9-month volatility varies from 50.50% to 76.40%). This suggests that longer-term volatilities are more stable compared to short-term, reflecting lesser uncertainty or better predictability over longer periods.
+
+2. **Volatility Trends**:
+   - Typically, as shown in the table, shorter time horizons exhibit higher and more erratic volatility due to immediate market reactions and shorter-term uncertainties. In contrast, longer durations show moderated volatilities as they absorb and average out short-term fluctuations.
+
+### Practical Uses for Options Traders
+- **Volatility Cone Construction**: The data is used to construct a volatility cone, which helps traders understand where the current implied volatility stands in relation to historical norms. This is crucial for assessing whether options are priced fairly relative to historical volatility levels.
+- **Decision Making**: Traders use this historical volatility data to inform their decisions on buying or selling options. For example:
+  - If current implied volatility is above the historical maximum for a similar time to expiry, it might suggest that the option is overpriced (a potential sell signal).
+  - Conversely, if it's below the historical minimum, the option might be underpriced (a potential buy signal).
+
+### Market Considerations
+- **Impact of External Factors**: It's important for traders to consider external factors such as changes in government economic policies or shifts in a company’s capital structure, as these can significantly affect volatility and, consequently, option pricing.
+
+### Conclusion
+Table I provides a detailed historical perspective on the volatility experienced by Nortel Networks, offering valuable insights for trading and risk assessment in options markets. By understanding these patterns and incorporating them into trading strategies, traders can better position themselves in the market, taking advantage of overpriced or underpriced options based on historical and implied volatility comparisons.
