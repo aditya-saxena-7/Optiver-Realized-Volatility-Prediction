@@ -60,15 +60,31 @@ Let’s dive into the fascinating world of volatility cones and historical data 
 
    <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/charts.png" width=80%>
 
-1. **Visual Representation**:
-   - **Figure I**: The volatility cone is plotted, showing historical volatilities for various time spans against the days to option expiry. This visual helps identify the volatility pattern and compare it against current implied volatility.
+This chart, labeled "Figure I - Historical Volatility Cone of Nortel Networks as at January 2003: 30-day Historical Volatilities vs. Implied Volatility," provides a visual representation of the historical and implied volatilities of a specific Nortel Networks call option (March 04 call at 4.500) over time leading up to its expiry. Here's a breakdown of the elements in the chart:
 
-   - **Overlay of Data**: The graph includes an overlay of the 30-day historical volatility and the implied volatility of NT’s March 03, 4.500 call option. This comparison is crucial to determine if the current market conditions are typical or if there are anomalies.
+### 1. **Axes**
+   - **X-axis**: Represents the "Days to Option Expiry," ranging from 0 to 360 days. This timeline helps in analyzing how volatility changes as the option approaches its expiration date.
+   - **Y-axis**: Represents the volatility levels, expressed as percentages, from 0% to 180%.
 
-2. **Interpretation**:
-   - **Maximum, Mean, and Minimum**: These values represent the extreme, average, and lowest observed volatilities over the specified periods. They help traders gauge the volatility range and assess risk.
+### 2. **Lines on the Chart**
+   - **Dashed Line (Blue Dashes)**: Represents the 30-day historical volatility observed over different time periods. This line shows how the historical volatility of the stock has trended as the option nears its expiry.
+   - **Solid Line (Red)**: Represents the implied volatility, which is the market's expectation of future volatility derived from the current price of options.
 
-   - **Comparative Analysis**: By comparing historical and implied volatilities, traders can decide if an option is underpriced or overpriced based on its volatility. This is essential for making informed trading decisions.
+### 3. **Behavior of the Lines**
+   - The **historical volatility** starts very high (near 180%) and shows significant fluctuations early on (within the first 60 days to expiry). It tends to decrease and stabilize as the option approaches its expiry, fluctuating around lower values.
+   - The **implied volatility** line starts lower than the initial historical volatility and exhibits less volatility. It remains relatively stable over time, indicating that the market's expectations about future price movements are more consistent compared to past price movements.
+
+### 4. **Volatility Cone**
+   - The "cone" shape is formed by the outer bounds of the historical volatility, which taper as the days to expiry decrease. The cone's boundary lines are not explicitly drawn here but can be visualized as encompassing the highest and lowest points of the historical volatility, indicating the range in which the volatility typically resides.
+
+### 5. **Analysis and Use**
+   - **Comparison**: Traders can use this chart to compare current implied volatility with historical volatility at corresponding times to expiry. This helps in assessing whether the option is currently priced reasonably.
+   - **Trading Decisions**: If the implied volatility is significantly above the historical trend (not the case here as both lines are close), it might suggest the option is overpriced (a potential sell signal). Conversely, if it's below, the option might be underpriced (a potential buy signal).
+
+### 6. **Key Observations**
+   - Throughout most of the time period, the implied volatility closely tracks the lower range of historical volatility, suggesting that the market's expectations are leaning towards the less volatile end of historical observations.
+
+This chart is essential for options traders focusing on volatility strategies, such as those looking to capitalize on discrepancies between implied and historical volatilities.
 
 ### Table Analysis 🖼️
 
