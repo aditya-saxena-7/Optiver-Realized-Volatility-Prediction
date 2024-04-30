@@ -135,3 +135,42 @@ In the context of trading options, **implied volatility** is a measure derived f
 - **Decision Making**: Traders use this historical volatility data to inform their decisions on buying or selling options. For example:
   - If current implied volatility is above the historical maximum for a similar time to expiry, it might suggest that the option is overpriced (a potential sell signal).
   - Conversely, if it's below the historical minimum, the option might be underpriced (a potential buy signal).
+
+## Conclusion
+
+### Practical Application of Volatility Cones
+We've successfully applied the concept of volatility cones using real-world data from Nortel Networks stock options. This technique is widely recognized for its ability to pinpoint potential trading opportunities that could be profitable.
+
+### Importance of Time Horizon Matching
+When comparing current option prices to historical data, it's essential to align the time frames precisely. The period used to calculate historical volatilities should match the remaining life of the option we are analyzing. This ensures that the comparison is accurate and meaningful.
+
+### Volatility Mean Reversion
+Our empirical analysis confirms that stock volatilities tend to revert to a mean or average level over time. We utilized this characteristic, along with historical data, to predict how volatilities might change as options approach their expiration. This can help traders anticipate and strategize according to likely future volatility shifts.
+
+### References
+1. Galen Burghardt and Morton Lane, *How to tell if options are cheap*, Journal of Portfolio Management, Winter 1990, Vol. 16. Nov 2.
+2. M. Desmond Fitzgerald, *The Handbook of Risk Management and Analysis, Chapter 12: Trading Volatilities*.
+3. Anchal Jai, *Rolling down the volatility term structure*, ICICI Bank Limited. [Available here](http://www.icicicareers.com/pdf/VolatilityStructureRolldownl.pdf).
+
+Certainly! Here's the conclusion of the paper summarized in a more digestible, layman-friendly format, presented in Markdown:
+
+
+## Conclusion
+
+### Practical Application of Volatility Cones
+We've successfully applied the concept of volatility cones using real-world data from Nortel Networks stock options. This technique is widely recognized for its ability to pinpoint potential trading opportunities that could be profitable.  Think of volatility cones as a tool that helps traders understand if the current price of stock options is high, low, or just right. It does this by comparing today’s option price (which anticipates future price swings) with how the stock has actually behaved in the past over similar periods.
+
+### Importance of Time Horizon Matching
+When comparing current option prices to historical data, it's essential to align the time frames precisely. The period used to calculate historical volatilities should match the remaining life of the option we are analyzing. This ensures that the comparison is accurate and meaningful.
+
+**Why Match Time Horizons?**  
+Imagine you’re trying to predict the weather for a two-week vacation based on past weather data. You wouldn’t look at weather patterns from just a few days to make your decision; you’d look at what the weather was typically like for the whole two weeks in previous years. Similarly, matching time horizons means using past stock data that covers the same time frame as the life left in the options you're studying.
+   
+### Volatility Mean Reversion
+Our empirical analysis confirms that stock volatilities tend to revert to a mean or average level over time. We utilized this characteristic, along with historical data, to predict how volatilities might change as options approach their expiration. This can help traders anticipate and strategize according to likely future volatility shifts.
+
+### References
+1. Galen Burghardt and Morton Lane, *How to tell if options are cheap*, Journal of Portfolio Management, Winter 1990, Vol. 16. Nov 2.
+2. M. Desmond Fitzgerald, *The Handbook of Risk Management and Analysis, Chapter 12: Trading Volatilities*.
+3. Anchal Jai, *Rolling down the volatility term structure*, ICICI Bank Limited. [Available here](http://www.icicicareers.com/pdf/VolatilityStructureRolldownl.pdf).
+
