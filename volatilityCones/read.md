@@ -153,7 +153,13 @@ Our empirical analysis confirms that stock volatilities tend to revert to a mean
 
 ### Continuation
 ---
-1. 
+1. Historical_Volatility_Cone_vs_Implied_Volatility Demostration
+- [Python Code](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/Historical_Volatility_Cone_vs_Implied_Volatility.ipynb)
+- [Youtube Video](https://youtu.be/_2wa9ldwi5A?si=mAu7xXdpekfryt29)
+
+2. Option Implied Volatility using Newton's Method in Python
+- [Python Code](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/Option_Implied_Volatility_using_Newtons_Method_in_Python.ipynb)
+- [Youtube Video](https://youtu.be/mPgVeazeq5U?si=OOv36rZBdBmP_dQ6)
 
 ### References
 ---
