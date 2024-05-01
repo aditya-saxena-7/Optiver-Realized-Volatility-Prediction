@@ -1,11 +1,17 @@
+### Newton-Raphson Method
+---
 Implied volatility is a crucial concept in options trading, representing the market's forecast of the future volatility of the price of the underlying asset. It is derived from the option's market price using a theoretical pricing model, typically the Black-Scholes model. Calculating implied volatility involves finding the volatility value that makes the theoretical price of an option equal to its market price. Because this involves solving a non-linear equation, numerical methods such as the Newton-Raphson method are often employed.
 
 ### Newton-Raphson Method
 
 The Newton-Raphson method is a powerful numerical technique used to find roots of real-valued functions. It converges quickly under suitable conditions but requires the first derivative of the function (which in this case, is the derivative with respect to volatility).
 
+Option Implied Volatility using Newton's Method in Python
+- [Python Code](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/Option_Implied_Volatility_using_Newtons_Method_in_Python.ipynb)
+- [Youtube Video](https://youtu.be/mPgVeazeq5U?si=OOv36rZBdBmP_dQ6)
+  
 ### Steps to Calculate Implied Volatility Using Newton-Raphson:
-
+---
 1. **Define the Function and Its Derivative**
    - Function \( f(\sigma) \): \( C(\sigma) - C_{\text{market}} \) where \( C(\sigma) \) is the Black-Scholes price of the option as a function of volatility \( \sigma \), and \( C_{\text{market}} \) is the market price of the option.
    - Derivative \( f'(\sigma) \): The derivative of \( C(\sigma) \) with respect to \( \sigma \), often referred to as "Vega" in finance, which measures the sensitivity of the option price to changes in volatility.
