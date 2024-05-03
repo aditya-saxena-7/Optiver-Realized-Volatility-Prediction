@@ -132,7 +132,7 @@ This measure captures the standard deviation of log returns, providing a quantit
 
 
 ### 📊 Evaluation: Understanding Trade Data
-
+---
 <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(800).png" width=80%>
 
 #### Overview of Trade Data
@@ -166,6 +166,70 @@ While order book data offers insights into potential price movements and market 
 **From Trade Data to Volatility**:
 - **Price Impact**: By examining the executed prices and sizes, analysts can infer the immediate impact of trades on market prices. Large trades at prices significantly different from recent WAPs (Weighted Average Prices) might indicate market moves that could affect volatility.
 - **Market Activity**: Frequent trading or large aggregate trading volumes within short windows can be indicative of higher volatility. Conversely, sparse or small trades might suggest a less volatile market.
+
+## Detailed Explanation of the Modeling Pipeline
+---
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(801).png" width=80%>
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(802).png" width=80%>
+
+### Stages in the Pipeline
+
+1. **Feature Engineering**: This initial stage involves creating predictive variables from the raw data that are more effective or informative than the raw data alone. In the context of financial data like order book and trade data, feature engineering could involve calculating statistical summaries (mean, variance), indicators (moving averages), or transformations (logarithmic returns, weighted average prices) that capture underlying trends or patterns relevant for predicting volatility.
+
+2. **Model Integration**: The feature-engineered data is then fed into three distinct models:
+    - **Gradient Boosting**
+    - **Neural Network (MLP - Multi-Layer Perceptron)**
+    - **TabNet (Deep Learning model for tabular data)**
+   
+3. **Regression (Meta-Modeling)**: Outputs from each of the three models are combined using a regression model that learns to optimally weight the predictions from each primary model to produce a final prediction. This approach leverages the strengths of each model to improve overall prediction accuracy.
+
+### Importance and Relevance
+
+- **Feature Engineering**: Essential for reducing model complexity and enhancing model performance by providing refined inputs that are directly relevant to the target variable (volatility in this case).
+- **Model Integration**: Using multiple models allows the capture of different aspects and patterns in the data, possibly reducing the risk of overfitting to the noise in a single modeling approach.
+- **Regression (Meta-Model)**: Combines the different predictive signals from each model into a single, more accurate and robust prediction. This step is crucial as it harmonizes the diverse strengths of individual models, mitigating their respective weaknesses.
+
+## Detailed Analysis of Each Model
+
+### 1. Gradient Boosting
+
+- **Pros**:
+  - **Efficiency**: Gradient Boosting is generally very fast, especially with implementations like LightGBM.
+  - **Performance**: Offers solid performance on structured/tabular data like financial datasets.
+  - **Handling of Non-linearities**: Very effective at modeling complex patterns in data through ensemble learning.
+
+- **Cons**:
+  - **Overfitting**: Without proper tuning, gradient boosting can overfit, especially with very noisy data.
+  - **Interpretability**: Slightly less interpretable than simpler models due to the complexity of ensemble learning.
+
+### 2. Neural Networks (MLP)
+
+- **Pros**:
+  - **Flexibility**: Can model complex non-linear relationships and interactions between features.
+  - **Scalability**: Well-suited for large datasets and capable of leveraging high-performance computing resources.
+
+- **Cons**:
+  - **Tuning Difficulty**: Requires careful tuning of parameters and network architecture, which can be time-consuming and technically challenging.
+  - **Data Requirement**: Typically requires large amounts of data to train effectively without overfitting.
+
+### 3. TabNet
+
+- **Pros**:
+  - **State-of-the-art**: Incorporates techniques from the successful Transformer architecture to handle tabular data.
+  - **Interpretability**: Offers some level of interpretability similar to decision trees by using attention across different features.
+
+- **Cons**:
+  - **Complexity**: More complex to set up and tune compared to more traditional models.
+  - **Data Sensitivity**: May not always outperform simpler models unless carefully tuned and trained with sufficient data.
+
+### Comparative Advantages and Choice of LightGBM
+
+Choosing **LightGBM** among other gradient boosting options might be motivated by the following:
+
+- **Speed**: LightGBM is designed to be faster and more efficient, particularly in handling large datasets, due to its histogram-based optimizations.
+- **Resource Efficiency**: Uses less memory and handles large amounts of data more efficiently.
+- **Handling Categorical Features**: Effective in managing categorical data directly without the need for extensive preprocessing.
 
 ---
 
