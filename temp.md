@@ -418,9 +418,10 @@ int DTWDistance(s: array [1..n], t: array [1..m]) {
 
 DTW is a robust method for comparing time series data in applications where the timing of events within the series is not consistent. Its ability to adjust for different speeds and timings in data collection makes it superior to other linear methods like Euclidean distance for many applications in financial analysis, healthcare monitoring, and more. However, the computational cost associated with DTW necessitates careful implementation, particularly with regard to the handling of data size and computing capacity.
 
-<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(807).png" width=80%>
-
 ## Analysis of DTW Time Series Clustering Using K-Means Algorithm
+---
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(807).png" width=80%>
 
 ### Overview and Application
 
