@@ -231,6 +231,54 @@ Choosing **LightGBM** among other gradient boosting options might be motivated b
 - **Resource Efficiency**: Uses less memory and handles large amounts of data more efficiently.
 - **Handling Categorical Features**: Effective in managing categorical data directly without the need for extensive preprocessing.
 
+## Explanation of Basic Features for Volatility Prediction
+---
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(803).png" width=80%>
+
+The features described are crucial for creating a predictive model for financial volatility based on high-frequency order book and trade data. Each feature captures different aspects of market behavior and dynamics, which can significantly influence the model's accuracy and performance. Here’s a detailed breakdown of each feature and its importance:
+
+### Features Based on the Order Book
+
+1. **Weighted Average Price (WAP)**: 
+   - **Definition**: A price metric that considers both the price and the quantity (size) of bids and asks. It is calculated as: \[ \text{WAP} = \frac{\text{BidPrice} \times \text{AskSize} + \text{AskPrice} \times \text{BidSize}}{\text{BidSize} + \text{AskSize}} \]
+   - **Relevance**: Provides a balanced view of the market's buying and selling pressures at a specific time, reflecting the price at which most trading could occur.
+
+2. **Log Return**:
+   - **Definition**: The logarithmic difference between successive prices, commonly used to stabilize the variance of financial time series. \[ \text{Log Return} = \log\left(\frac{\text{Price}_{t}}{\text{Price}_{t-1}}\right) \]
+   - **Relevance**: Helps in quantifying the price changes in a way that adjustments for compounding and asymmetries in positive and negative movements are considered.
+
+3. **Volatility**:
+   - **Definition**: A statistical measure of the dispersion of returns for a given security or market index. Typically, higher volatility means higher risk.
+   - **Relevance**: Essential for risk management in trading and investment strategies, as it provides an estimate of the potential price range of an asset in a given time frame.
+
+4. **Volume and Volume Imbalance**:
+   - **Definition**: Volume indicates the number of shares traded in a particular period. Volume imbalance measures the difference between the volume of buy orders and sell orders.
+   - **Relevance**: High trading volume can indicate a high interest in a stock, potentially leading to larger price changes. Volume imbalance can signal the direction of the market movement based on dominant trading interest (buying vs. selling).
+
+5. **Bid-Ask Spread**:
+   - **Definition**: The difference between the highest bid (buy price) and the lowest ask (sell price).
+   - **Relevance**: A narrower spread often indicates a more liquid market, whereas a wider spread can signal higher transaction costs and lower liquidity.
+
+### Smoothing Techniques
+
+- **Moving Averages / Moving Standard Deviation**:
+  - **Definition**: These are statistical operations applied to time series data to smooth out short-term fluctuations and highlight longer-term trends or cycles.
+  - **Relevance**: They help in understanding underlying trends in the data by damping down the noise of random fluctuations. This is crucial for detecting trends in financial markets where recent changes might be more indicative of future movements.
+
+### Change Detection in Time Series
+
+- **Change Metrics**:
+  - **Definition**: Statistical calculations designed to identify significant changes or breaks in a time series, such as differences in volume or price over specified intervals.
+  - **Relevance**: Critical for capturing shifts in market conditions, which could be indicative of events or changes in trader behavior, affecting volatility.
+
+### Levels of Information
+
+- **Stock x Time Level, Stock Level, Time Level**:
+  - **Definition**: Different granularities of data aggregation — from individual stocks at specific times to broader averages across stocks or time periods.
+  - **Relevance**: These features allow models to capture both micro-level fluctuations specific to particular stocks and macro-level trends affecting the entire market or segments of the market over time. 
+
+
 ---
 
 ### 🧠 Model Development
