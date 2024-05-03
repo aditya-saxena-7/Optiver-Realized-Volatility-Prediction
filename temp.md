@@ -42,6 +42,47 @@ The concept of realized volatility has been thoroughly explored within the realm
 🌐 Building upon these academic pillars, more recent inquiries have implemented advanced computational methods such as [Random Forests](https://link.springer.com/chapter/10.1007/978-1-4614-6849-3_12), [Neural Networks](https://ieeexplore.ieee.org/document/7849326), and [Support Vector Machines](https://www.sciencedirect.com/science/article/pii/S0957417407006719) to predict stock price movements based on historical volatility patterns, as explored by Brooks in 2014. These contemporary studies underscore the dynamic evolution of financial analytics and highlight an increasing dependency on fine-grained, high-frequency trading data to capture the subtle nuances of market dynamics, thereby advancing our understanding and capabilities in financial analysis. 📊
 
 ### 🔍 Methodology
+---
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(798).png" width=100%>
+
+#### Competition Format and Predictive Task
+
+The Optiver Realized Volatility Prediction competition poses a unique challenge centered on predicting the short-term realized volatility of stocks over a 10-minute window using high-frequency trading data. Let's break down the core elements of this task:
+
+**Realized Volatility (RV) Formula**:  
+The key metric of interest, Realized Volatility, is computed as:
+\[ \sigma = \sqrt{\sum_{t} r_{t-1,t}^2} \]
+Here, \( r_{t-1,t} \) represents the log returns of stock prices at consecutive time points, and the formula calculates the standard deviation of these log returns. Notably, the calculation assumes a zero mean return and omits any scaling factor, simplifying the volatility estimation to focus purely on the magnitude of price fluctuations without averaging.
+
+**Evaluation Metric**:
+The accuracy of the predictions is assessed using the Root Mean Squared Percentage Error (RMSPE), defined as:
+\[ \text{RMSPE} = \sqrt{\frac{1}{n} \sum_{i=1}^n \left(\frac{(y_i - \hat{y}_i)}{y_i}\right)^2} \]
+This metric evaluates the percentage errors relative to the actual values, emphasizing the proportional accuracy of the predictions across different stock price scales.
+
+**Data Scale and Utilization**:  
+Participants are provided with a massive dataset consisting of approximately 150,000 data points across 112 stocks. Each data point represents a 10-minute window of trading activity, capturing intricate details of market movements. The predictive models utilize order book and transaction data from the preceding 10-minute window to forecast the upcoming volatility.
+
+#### Model Training and Evaluation Process
+
+The competition format is structured to simulate real-world trading scenarios, where timely and accurate predictions are crucial:
+
+1. **Model Development**: During the initial phase, participants can experiment with various modeling techniques, refine their strategies, and submit predictions as frequently as desired. This phase allows for iterative learning and model optimization based on immediate feedback from the competition platform.
+
+2. **Live Validation**: Post the development phase, a fixed model is used to predict unseen market data over a subsequent three-month period. This live test phase prohibits model adjustments, thus mimicking a real trading environment where algorithms must perform robustly against future data without the possibility for real-time tuning.
+
+3. **Competition Outcome**: The final performance of each participant's model is determined after the live validation period, ensuring that all models are tested impartially and rigorously against actual market developments.
+
+### Key Challenges and Considerations
+
+Participants must address several challenges inherent in this task:
+
+- **Handling High-Frequency Data**: The models must efficiently process and extract useful patterns from vast amounts of granular data within limited time frames.
+- **Accuracy under Market Volatility**: Ensuring prediction accuracy in diverse market conditions, including periods of high volatility and unpredictable market events.
+- **Overfitting Prevention**: Developing a model that generalizes well to new data, avoiding overfitting to historical data used during the model development phase.
+
+This competition format not only tests participants' ability to develop advanced predictive models but also their skill in creating strategies that are adaptable and resilient in the dynamic landscape of financial markets.
+
 
 ---
 
