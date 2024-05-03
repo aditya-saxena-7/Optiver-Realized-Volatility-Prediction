@@ -8,10 +8,9 @@
 3. 📚 [Literature Review](#literature-review)
 4. 🔍 [Methodology](#methodology)
 5. 🧠 [Model Development](#model-development)
-6. 📊 [Evaluation](#evaluation)
+6. 📈 [Results and Discussion](#results-and-discussion)
 7. 🗃️ [Data Citation](#data-citation)
-8. 📈 [Results and Discussion](#results-and-discussion)
-9. 🏁 [Conclusion](#conclusion)
+8. 🏁 [Conclusion](#conclusion)
 
 ### 🔍 Abstract
 
