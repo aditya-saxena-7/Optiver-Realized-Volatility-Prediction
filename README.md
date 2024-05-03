@@ -39,16 +39,16 @@ Participants will need to design, implement, and validate their predictive model
 ---
 
 🔍 **Research Walkthrough:**  
----
+
 Explore the detailed outline of my project research journey: [Research Outline](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/researchOutline.md)
 
 📊 **Code Files:**  
----
+
 1. **BaseCode**: Our foundational codebase for the project. [BaseCode](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/BaseCode.ipynb)
 2. **Features Construction and EDA**: Code focusing on feature engineering and exploratory data analysis. [Features Construction and EDA](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/Features_Construction_and_EDA.ipynb)
 
 🛠 **Additional Concepts Explored:**  
----
+
 1. **Historical Volatility Cones**: Delve into this concept and its application in volatility prediction.
    - Concept Walkthrough: [Historical Volatility Cones Introduction](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/introduction.md)
    - Python Code: [Historical Volatility Cone vs Implied Volatility](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/Historical_Volatility_Cone_vs_Implied_Volatility.ipynb)
