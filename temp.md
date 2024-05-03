@@ -130,6 +130,43 @@ Finally, realized volatility is calculated using the formula introduced earlier:
 \[ \sigma = \sqrt{\sum_{t} r_{t-1,t}^2} \]
 This measure captures the standard deviation of log returns, providing a quantitative measure of the market's volatility over a specified period.
 
+
+### 📊 Evaluation: Understanding Trade Data
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(800).png" width=80%>
+
+#### Overview of Trade Data
+
+While the primary focus of the Optiver Realized Volatility Prediction competition is on order book data, the trade data provided also plays a crucial role in modeling and forecasting market dynamics. This dataset captures the actual transactions that have occurred, providing a snapshot of executed trades.
+
+**Key Aspects of Trade Data**:
+- **Trade Execution**: Trade data records the finalized transactions where a buyer and a seller have agreed on a price and exchanged the security. Unlike the order book, which represents potential market actions, trade data reflects actual market activity.
+- **Components**: Each entry in the trade dataset typically includes:
+  - **Price**: The price at which the trade was executed.
+  - **Size**: The number of shares or units traded.
+  - **Order Count**: The number of individual orders that were aggregated to result in the total traded size at the listed price.
+
+#### Example Data Structure
+
+The provided image and description illustrate a typical structure of trade data:
+
+- **time_id**: Identifies the time window the trade belongs to.
+- **seconds_in_bucket**: Indicates the seconds past the start of the bucket (or window) when the trade occurred.
+- **price**: The execution price of the trades.
+- **size**: The number of shares involved in the trades.
+- **order_count**: The count of separate trading orders that contributed to the aggregate volume reported.
+
+This structured format allows participants to analyze the frequency, volume, and nature of trades within the specific time windows relevant to the competition's prediction tasks.
+
+#### Relevance to Volatility Prediction
+
+**Integration with Order Book Data**:
+While order book data offers insights into potential price movements and market liquidity, trade data provides concrete evidence of how these possibilities materialize into real transactions. This helps in understanding the impact of market orders on price changes and liquidity consumption.
+
+**From Trade Data to Volatility**:
+- **Price Impact**: By examining the executed prices and sizes, analysts can infer the immediate impact of trades on market prices. Large trades at prices significantly different from recent WAPs (Weighted Average Prices) might indicate market moves that could affect volatility.
+- **Market Activity**: Frequent trading or large aggregate trading volumes within short windows can be indicative of higher volatility. Conversely, sparse or small trades might suggest a less volatile market.
+
 ---
 
 ### 🧠 Model Development
