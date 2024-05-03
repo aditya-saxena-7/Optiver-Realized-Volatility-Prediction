@@ -1,4 +1,4 @@
-### About Ornstein-Uhlenbeck
+### About Ornstein-Uhlenbeck Process
 ---
 The Ornstein-Uhlenbeck (OU) process is a type of stochastic process that is particularly known for its properties of mean reversion. This characteristic makes it very useful in various fields, especially in quantitative finance where many variables, such as interest rates, commodity prices, and volatility levels, exhibit tendencies to revert to a long-term mean. The OU process is named after Leonard Ornstein and George Uhlenbeck, who introduced the process in the context of physical processes.
 
@@ -104,7 +104,11 @@ The Ornstein-Uhlenbeck (OU) process is particularly well-suited for modeling sto
 
 In the context of financial markets, where understanding and predicting volatility is crucial for options pricing, risk management, and strategic decision-making, the OU process provides a robust framework. It effectively captures the essence of how market volatility behaves over time, particularly its tendency to rise sharply during market downturns and then revert to a more stable state. This makes it a valuable tool for both theoretical studies and practical applications in finance.
 
-###
+### Continuation
+---
+1. Trading_stock_volatility_with_the_Ornstein_Uhlenbeck_process Demonstration
+- [Python Code](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/ornstein_Uhlenbeck_Process/Trading_stock_volatility_with_the_Ornstein_Uhlenbeck_process.ipynb)
+- [Youtube Video](https://youtu.be/gPPyJZnFNHg?si=JCckjXylW8lrLWt2)
 
 
 
