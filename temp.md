@@ -83,10 +83,54 @@ Participants must address several challenges inherent in this task:
 
 This competition format not only tests participants' ability to develop advanced predictive models but also their skill in creating strategies that are adaptable and resilient in the dynamic landscape of financial markets.
 
-
 ---
 
-Our methodology centers around a quantitative analysis of the order book and trade execution data provided by the Optiver dataset. We begin with data preprocessing to handle anomalies and missing values, ensuring a clean dataset for model training. Feature engineering plays a crucial role in our approach, as we extract meaningful indicators from the raw data such as moving averages, price velocity, and order book imbalances. These features aim to capture the intricacies of market behavior that influence short-term volatility.
+### Understanding Order Book Data
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(799).png" width=80%>
+
+#### Overview of Order Book Data
+
+In the Optiver Realized Volatility Prediction competition, the primary dataset provided is the **Order Book** data. This dataset is critical for understanding market dynamics and is essential for predicting short-term volatility. Here’s a detailed look at what order book data encompasses and how it's utilized in this context:
+
+**Definition**:  
+An order book is an electronic list of buy and sell orders for a specific security or financial instrument, organized by price level. It provides a real-time snapshot of market liquidity and is used to gauge potential future movements in the market.
+
+**Components of an Order Book**:
+- **Bid**: The bid prices represent the maximum price that buyers are willing to pay for the security. Each bid price is associated with a specific quantity of shares, referred to as the bid size.
+- **Ask**: Conversely, the ask prices are the minimum prices at which sellers are willing to sell the security, each accompanied by an ask size.
+
+The data snapshot in the image illustrates how bid and ask information is presented at various price levels, capturing the depth and range of market sentiment.
+
+#### Data Structure and Key Variables
+
+**Columns in Order Book Data**:
+- **Price Levels (BidPrice1, AskPrice1, BidPrice2, AskPrice2, etc.)**: These columns represent various price points at which market participants are willing to buy (bid) or sell (ask). The '1' denotes the most competitive (closest to the current market price) bid and ask prices, while '2' represents the next best available prices.
+- **Size Levels (BidSize1, AskSize1, BidSize2, AskSize2, etc.)**: These columns correspond to the number of shares available at each of the price points mentioned above.
+
+This structured data format allows traders and algorithms to quickly assess the market's supply and demand dynamics at multiple price levels, providing a granular view of market liquidity.
+
+#### Calculating Weighted Average Price (WAP)
+
+To predict volatility from order book data, one needs to derive a price that best represents the market conditions at any given moment. The Weighted Average Price (WAP) is used for this purpose and is calculated as follows:
+\[ \text{WAP} = \frac{\text{BidPrice}_i \times \text{AskSize}_i + \text{AskPrice}_i \times \text{BidSize}_i}{\text{BidSize}_i + \text{AskSize}_i} \]
+
+**Example**:
+Using the formula, the WAP takes into account both the price and the size of bids and asks, providing a price point that reflects both the depth of the market and the existing trading volume.
+
+#### From WAP to Volatility
+
+**Log Returns**:
+Once the WAP is calculated, the next step involves computing the log returns. Log returns are a standard measure in finance for calculating the relative changes in price over time and are expressed as:
+\[ r_{t_1, t_2} = \log \left( \frac{S_2}{S_1} \right) \]
+where \( S_1 \) and \( S_2 \) are the WAPs at two consecutive time points.
+
+**Realized Volatility**:
+Finally, realized volatility is calculated using the formula introduced earlier:
+\[ \sigma = \sqrt{\sum_{t} r_{t-1,t}^2} \]
+This measure captures the standard deviation of log returns, providing a quantitative measure of the market's volatility over a specified period.
+
+---
 
 ### 🧠 Model Development
 
