@@ -31,18 +31,34 @@ Participants will need to design, implement, and validate their predictive model
 
 - Kaggle platform.
 - Python.
-- Scikit learn.                                                                                                           
+- Scikit learn.   
 - LGBM
 
+## Work Done 🧰
+
+---
+
+🔍 **Research Walkthrough:**  
+---
+Explore the detailed outline of my project research journey: [Research Outline](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/researchOutline.md)
+
+📊 **Code Files:**  
+---
+1. **BaseCode**: Our foundational codebase for the project. [BaseCode](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/BaseCode.ipynb)
+2. **Features Construction and EDA**: Code focusing on feature engineering and exploratory data analysis. [Features Construction and EDA](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/Features_Construction_and_EDA.ipynb)
+
+🛠 **Additional Concepts Explored:**  
+---
+1. **Historical Volatility Cones**: Delve into this concept and its application in volatility prediction.
+   - Concept Walkthrough: [Historical Volatility Cones Introduction](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/introduction.md)
+   - Python Code: [Historical Volatility Cone vs Implied Volatility](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/Historical_Volatility_Cone_vs_Implied_Volatility.ipynb)
+   - Video Demonstration: [YouTube - Historical Volatility Cone vs Implied Volatility](https://youtu.be/_2wa9ldwi5A?si=mAu7xXdpekfryt29)
+   - Research Paper Reference: [Trading Volatility Using Historical Volatility Cones](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/volatilityCones/Trading-Volatility-Using-Historical-Volatility-Cones.pdf)
+
+2. **Ornstein-Uhlenbeck Process**: Understanding and utilizing this process for stock volatility prediction.
+   - Concept Walkthrough: [Ornstein-Uhlenbeck Process Introduction](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/ornstein_Uhlenbeck_Process/introduction.md)
+   - Python Code: [Trading Stock Volatility with the Ornstein-Uhlenbeck Process](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/ornstein_Uhlenbeck_Process/Trading_stock_volatility_with_the_Ornstein_Uhlenbeck_process.ipynb)
 
 ---
 
 Feel free to reach out at [adityasaxena@g.harvard.edu](mailto:adityasaxena@g.harvard.edu) for more insights or potential collaboration! 🤝 Happy trading and analyzing! 📊🚀
-
-
-
-
-
-
-
-
