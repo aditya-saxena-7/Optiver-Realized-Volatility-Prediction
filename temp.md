@@ -44,7 +44,7 @@ The concept of realized volatility has been thoroughly explored within the realm
 ### 🔍 Methodology
 ---
 
-<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(798).png" width=100%>
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(798).png" width=80%>
 
 #### Competition Format and Predictive Task
 
