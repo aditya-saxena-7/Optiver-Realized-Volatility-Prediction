@@ -167,8 +167,12 @@ While order book data offers insights into potential price movements and market 
 - **Price Impact**: By examining the executed prices and sizes, analysts can infer the immediate impact of trades on market prices. Large trades at prices significantly different from recent WAPs (Weighted Average Prices) might indicate market moves that could affect volatility.
 - **Market Activity**: Frequent trading or large aggregate trading volumes within short windows can be indicative of higher volatility. Conversely, sparse or small trades might suggest a less volatile market.
 
-## Detailed Explanation of the Modeling Pipeline
+### 🧠 Model Development
+
 ---
+
+## Detailed Explanation of the Modeling Pipeline
+
 <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(801).png" width=80%>
 
 <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(802).png" width=80%>
@@ -460,14 +464,6 @@ From the clustering results and the inherent challenges of using DTW with K-mean
 DTW K-means clustering offers a nuanced approach to analyzing time series data in finance, capturing deeper similarities in trading patterns that standard techniques might miss. However, its computational demands and the challenges in choosing an optimal number of clusters highlight the need for careful methodological choices in practical applications. Exploring hybrid approaches combining machine learning-derived features with traditional clustering could be a promising direction for future research and application.
 
 ---
-
-### 🧠 Model Development
-
----
-
-[Need to Add]
-
-Each model's performance is rigorously evaluated using a validation set, and ensemble techniques are employed to combine the strengths of individual models, thereby enhancing the overall predictive accuracy. The final model selection is guided by the RMSPE, ensuring that the chosen model not only fits the training data well but also generalizes effectively to unseen data.
 
 ### 📊 Evaluation
 
