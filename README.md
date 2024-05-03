@@ -36,8 +36,6 @@ Participants will need to design, implement, and validate their predictive model
 
 ## Work Done 🧰
 
----
-
 🔍 **Research Walkthrough:**  
 
 Explore the detailed outline of my project research journey: [Research Outline](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/researchOutline.md)
