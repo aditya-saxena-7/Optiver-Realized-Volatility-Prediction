@@ -278,6 +278,61 @@ The features described are crucial for creating a predictive model for financial
   - **Definition**: Different granularities of data aggregation — from individual stocks at specific times to broader averages across stocks or time periods.
   - **Relevance**: These features allow models to capture both micro-level fluctuations specific to particular stocks and macro-level trends affecting the entire market or segments of the market over time. 
 
+## Finding New Ideas for Feature Extraction
+
+In competitive modeling environments like the Optiver Realized Volatility Prediction challenge, the standard features—such as volume, volatility, and bid-ask spreads—are often used by many competitors. To gain an edge, it becomes essential to think outside the box or to implement innovative methods that other competitors might not be considering. This often involves exploring new ways to extract meaningful features from the data that capture the underlying patterns or trends not immediately obvious through conventional methods.
+
+## Introduction to Autoencoders
+---
+
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(804).png" width=80%>
+
+### What Are Autoencoders?
+
+Autoencoders are a type of neural network used to learn efficient codings of unlabeled data, typically for the purpose of dimensionality reduction. An autoencoder learns to compress (encode) the input into a lower-dimensional code and then reconstruct (decode) the output back to the original input.
+
+### How Autoencoders Work
+
+The typical architecture of an autoencoder includes three main parts:
+1. **Encoder**: This part of the network compresses the input into a smaller representation.
+2. **Code**: This is the lower-dimensional representation of the input data.
+3. **Decoder**: This part attempts to reconstruct the input data from the code, ideally as close to the original input as possible.
+
+The aim is to minimize the difference between the input and the output, which encourages the code to retain as much meaningful information about the input data as possible.
+
+## LSTM Autoencoders for Time Series Data
+
+### What is LSTM?
+
+Long Short-Term Memory (LSTM) units are a building block for layers of a recurrent neural network (RNN). An LSTM is designed to overcome the limitations of traditional RNNs, which are prone to forget earlier information in the input data, making them ineffective for long sequences. LSTMs are capable of learning long-term dependencies in data, which makes them particularly useful for time series analysis where such dependencies are common.
+
+### Why Choose LSTM for Autoencoders in Time Series?
+
+1. **Pattern and Shape Recognition**: LSTMs are well-suited for learning from sequences where the order of data points is important. They can recognize patterns or changes in patterns over time, making them ideal for time series data where the goal is to capture inherent trends that are predictive of future movements.
+
+2. **Handling Time Series Data**: In financial markets, data points are often not independent but are instead a sequence where the past is indicative of the future to some extent. LSTMs can process such data effectively and can be used in autoencoders to both compress and reconstruct the time series data accurately.
+
+### Implementation and Its Relevance
+
+In the model depicted, the LSTM autoencoder is configured to:
+- Initially compress a multi-feature time series into a lower-dimensional representation.
+- Then expand it back out to reconstruct the original input.
+
+This process helps in extracting the most crucial features from the sequence, encapsulating the information in fewer dimensions while maintaining the sequence's dynamics.
+
+### Pros of Using LSTM Autoencoders
+
+- **Efficient Information Capture**: Can compress information without losing critical temporal dynamics.
+- **Pattern Learning**: Especially good at capturing and learning from the patterns in time series data.
+
+### Cons of Using LSTM Autoencoders
+
+- **Complexity in Training**: They are generally more complex and computationally expensive to train compared to simpler models.
+- **Need for Down-Sampling**: To manage computational resources effectively, it might be necessary to down-sample the input data, which could potentially lead to loss of some finer details in the data.
+
+### Conclusion
+
+Using LSTM Autoencoders allows for a deep and nuanced understanding of time series data, making them a powerful tool in financial predictions where the dataset is large and complex. However, the trade-off includes increased computational demand and complexity in model tuning and training. Such sophisticated methods are often necessary in competitive environments to achieve superior performance by capturing subtle patterns missed by conventional models.
 
 ---
 
