@@ -465,11 +465,28 @@ DTW K-means clustering offers a nuanced approach to analyzing time series data i
 
 ---
 
-### 📊 Evaluation
+### 📈 Results and Discussion
 
 ---
 
 To accurately assess the performance of our volatility prediction models, we employ the Root Mean Square Percentage Error (RMSPE), which offers a robust measure of prediction accuracy relative to the true observed values. This metric is particularly useful for comparing the effectiveness of our diverse set of models across different stock segments and time periods. We further refine our evaluation process by conducting cross-validation within the training set, ensuring our model's stability and robustness against overfitting. Through iterative testing and model refinement, we optimize parameters to enhance predictive performance, striving to achieve the lowest possible RMSPE.
+
+**Based on our code files:**
+
+1. [BaseCode](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/BaseCode.ipynb)
+2. [Features_Construction_and_EDA](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/Features_Construction_and_EDA.ipynb)
+
+We've defined a function to calculate the Root Mean Squared Percentage Error (RMSPE), which is a commonly used metric to evaluate the performance of regression models when the target variable is continuous and strictly positive. The RMSPE is particularly popular in finance and stock market predictions because it normalizes the error based on the size of the true value, making it a relative error metric.
+
+The RMSPE function calculates the square root of the average squared percentage errors between the actual values (`y_true`) and the predicted values (`y_pred`).
+
+We then calculate the R-squared (R2) score, which provides a measure of how well the variability of the target is explained by the model's predictions. An R2 score of 1 indicates perfect correlation, while a score of 0 indicates no correlation.
+
+- **R2 score**: With a value of 0.628, the naive model explains about 62.8% of the variability in the target. This is a fairly decent score for a naive model and indicates some level of predictive power.
+
+- **RMSPE**: A value of 0.341 means that, on average, the predictions of the naive model deviate from the actual realized volatilities by 34.1%. This value gives an idea of the error magnitude in relation to the actual volatility values.
+
+The performance metrics suggest that while the naive model has a certain predictive capability, there is still room for improvement. The R2 score shows a positive correlation, but the RMSPE indicates that the predictions are not very close to the actual values in percentage terms, which could be critical when making trading decisions or managing risk. The goal in a predictive modeling task would be to develop a model that increases the R2 score and decreases the RMSPE.
 
 ### 🗃️ Data Citation
 
@@ -478,19 +495,6 @@ To accurately assess the performance of our volatility prediction models, we emp
 The data used in this project is sourced from the "Optiver Realized Volatility Prediction," available on Kaggle. This dataset is critical for our analysis as it provides high-resolution insights into the micro-structure of the financial markets, including order book snapshots and executed trades data, which are pivotal for our predictive modeling.
 
 Tom Forbes, John Macgillivray, Matteo Pietrobon, Sohier Dane, Maggie Demkin. (2023). [Optiver - Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview).
-
-### 📈 Results and Discussion
-
----
-
-[Need to Add]
-
-
-### 🏁 Conclusion
-
----
-
-[Need to Add]
 
 ---
 
