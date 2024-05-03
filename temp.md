@@ -418,6 +418,46 @@ int DTWDistance(s: array [1..n], t: array [1..m]) {
 
 DTW is a robust method for comparing time series data in applications where the timing of events within the series is not consistent. Its ability to adjust for different speeds and timings in data collection makes it superior to other linear methods like Euclidean distance for many applications in financial analysis, healthcare monitoring, and more. However, the computational cost associated with DTW necessitates careful implementation, particularly with regard to the handling of data size and computing capacity.
 
+<img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(807).png" width=80%>
+
+## Analysis of DTW Time Series Clustering Using K-Means Algorithm
+
+### Overview and Application
+
+Dynamic Time Warping (DTW) K-means clustering is an advanced method to group time series data based on their structural similarities rather than absolute numerical similarities at specific points. This approach leverages the DTW distance metric to effectively handle time shifts and different paces in time series patterns, making it particularly suitable for financial data where patterns may not align perfectly due to varying market conditions.
+
+### Observations from DTW K-means Clustering
+
+1. **Cluster Formation**: The application of DTW with K-means to the Weighted Average Price (WAP) and Volume time series has demonstrated an ability to group similar time series based on shifted patterns. This grouping is visualized where each cluster (identified by a unique plot) has multiple time series (in grey) that are closely aligned around a central trend or pattern (the red line).
+
+2. **Centroid Definition**: In DTW K-means clustering, the centroid (red line) is redefined as the barycenter which minimizes the DTW distance to all time series within that cluster. This differs from traditional Euclidean centroids, as the barycenter accounts for the optimal alignment of sequences, rather than averaging point-wise values.
+
+3. **Complexity and Challenges**: A significant challenge noted is the algorithm’s struggle to encapsulate highly complex patterns or an excessive variety of patterns within a limited number of clusters. The results suggest that more granular clustering or increased cluster numbers might be necessary to capture the full range of patterns present in the data.
+
+### Pros and Cons of Using DTW K-means Clustering
+
+#### Pros:
+- **Pattern Flexibility**: Able to identify and group time series that share similar patterns even if these patterns are shifted in time or distorted.
+- **Improved Cluster Quality**: By using DTW, the clusters formed are likely to be more meaningful in terms of pattern similarity, which is crucial for pattern recognition tasks in finance.
+
+#### Cons:
+- **Computational Cost**: DTW is computationally expensive, particularly when combined with K-means, as each iteration requires recalculating DTW distances for every point to every cluster center.
+- **Scalability Issues**: The method may not scale well with very large datasets or a high number of clusters without significant computational resources.
+
+### Lessons Learned and Alternative Approaches
+
+From the clustering results and the inherent challenges of using DTW with K-means, several key insights and potential strategies emerge:
+
+1. **Necessity for More Clusters or Different Clustering Techniques**: Given the complexity and variety of the financial time series data, increasing the number of clusters or employing a different clustering methodology might yield better segmentation of data.
+
+2. **Integration with LSTM AutoEncoder Features**: An alternative approach would be to use features extracted via an LSTM AutoEncoder as inputs into a traditional K-means clustering algorithm. This could reduce the computational burden while still benefiting from the deep learning model's capability to capture essential time series characteristics.
+
+3. **Exploration of Other Clustering Algorithms**: Considering other clustering algorithms that might better handle the high dimensionality or the specific characteristics of time series data, such as hierarchical clustering or density-based methods like DBSCAN, could provide new insights.
+
+### Conclusion
+
+DTW K-means clustering offers a nuanced approach to analyzing time series data in finance, capturing deeper similarities in trading patterns that standard techniques might miss. However, its computational demands and the challenges in choosing an optimal number of clusters highlight the need for careful methodological choices in practical applications. Exploring hybrid approaches combining machine learning-derived features with traditional clustering could be a promising direction for future research and application.
+
 ---
 
 ### 🧠 Model Development
