@@ -131,7 +131,7 @@ Finally, realized volatility is calculated using the formula introduced earlier:
 This measure captures the standard deviation of log returns, providing a quantitative measure of the market's volatility over a specified period.
 
 
-### 📊 Evaluation: Understanding Trade Data
+#### Understanding Trade Data
 ---
 <img src="https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/assets/Screenshot%20(800).png" width=80%>
 
