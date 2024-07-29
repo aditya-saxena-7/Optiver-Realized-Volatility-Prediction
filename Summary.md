@@ -46,7 +46,8 @@ For trading firms like Optiver, predicting volatility is crucial for effectively
 #### Competition Format and Predictive Task
 
 **Realized Volatility (RV) Formula**:  
-The key metric of interest, Realized Volatility, is computed as:
+
+The simplified version ignores any mean of the returns and just sums the squared log returns. This is reasonable for high-frequency data where the mean return can be very close to zero. The formula is:
 
 sigma = \sqrt{\sum_{t} r_{t-1,t}^2}
 
@@ -120,7 +121,11 @@ This measure captures the standard deviation of log returns, providing a quantit
      \[ r_{t-1,t} = \log \left( \frac{P_t}{P_{t-1}} \right) \]
      where \( P_t \) and \( P_{t-1} \) are the stock prices at time \( t \) and \( t-1 \) respectively.
    
-   - **Purpose**: Log returns are used because they make the data more stable and easier to handle mathematically, especially when dealing with compounding returns over time.
+Comparability: Log returns can be summed over time to find the total return, unlike simple returns which need to be compounded.
+
+Symmetry: They treat positive and negative changes symmetrically, a property not seen in simple returns where a 50% loss cannot be recouped by a 50% gain.
+
+Statistical Properties: Log returns are more likely to be normally distributed, which simplifies various statistical analyses, such as hypothesis testing and interval estimation.
 
 2. **Summing Squared Log Returns**:
 
@@ -174,6 +179,100 @@ P_3 = 108
 
 1. [BaseCode](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/BaseCode.ipynb)
 2. [Features_Construction_and_EDA](https://github.com/aditya-saxena-7/Optiver-Realized-Volatility-Prediction/blob/main/codeBase/Features_Construction_and_EDA.ipynb)
+
+### Base Code:
+
+**Terminologies:**
+
+time_id: This identifies the specific time interval or session during which these trades occurred. All the entries you showed are from time_id = 5, suggesting they all belong to the same trading segment or day.
+
+seconds_in_bucket: Indicates the specific second within the time_id when these trades were executed. For example, the first entry shows that at 28 seconds into the trading session identified by time_id = 5, certain trades were executed.
+
+price: This column shows the price at which trades were executed. These prices are normalized and weighted by the number of shares involved in each transaction. The weighting by the number of shares ensures that larger trades have a more significant impact on the average price calculation, giving a more accurate reflection of market prices.
+
+size: Represents the total number of shares or units traded in that specific second. For instance, at 28 seconds (seconds_in_bucket), 553 shares were traded.
+
+order_count: Indicates the number of unique orders that were executed to reach the total trade size reported in the size column for that second. The first entry with order_count = 11 suggests that it took 11 separate orders to accumulate the 553 shares traded at that time.
+
+Bid/Ask Spread
+The bid/ask spread is a measure of the difference between the highest price that buyers are willing to pay (bid price) and the lowest price that sellers are willing to accept (ask price). It's calculated as follows:
+
+Bid/Ask Spread = (Bid Price/Ask Price) - 1
+
+Market Liquidity: A narrower bid/ask spread typically indicates greater liquidity, making it easier to execute trades near the market price without causing price movement. if bid/ask spread is higher, that means the liquidity for the single asset is not great. The lower the bid/ask spread the better the marekt liquidity for the specific asset.
+
+Transaction Costs: For traders, a lower spread means lower transaction costs, as they can buy and sell closer to the mid-price.
+
+Market Sentiment: Large spreads can also indicate higher uncertainty or lower confidence among traders regarding the asset's value.
+
+### First Plot: Weighted Average Price (WAP) and Best Bid/Ask Prices
+
+Conclusions from the WAP Plot:
+
+Price Movements: The WAP, bid, and ask prices move in sync, as expected, since WAP is derived from these prices. Fluctuations in WAP reflect real-time changes in market conditions.
+
+Bid-Ask Convergence and Divergence: There are periods where the bid and ask prices converge (indicating a tighter spread) and periods where they diverge (wider spread), which could imply changing market liquidity.
+
+Price Volatility: The extent of fluctuation in the WAP line could be indicative of the volatility during this time period. Sharp movements in bid or ask prices that are mirrored in the WAP suggest rapid changes in market sentiment.
+
+### First Plot: Second Plot: Log Return and Cumulative Log Return
+
+Conclusions from the Log Return Plot:
+
+Return Fluctuations: The log returns fluctuate around zero, with no discernible trend, suggesting a market that doesn't have a strong directional movement in this time frame.
+
+Cumulative Returns: The cumulative log return line gives an overall picture of how returns are accumulating or compounding over time. If this line is trending upwards or downwards, it would suggest a longer-term price movement within this bucket.
+Intraday Volatility: The plot of log returns shows the price volatility at each second. Sharp spikes or dips indicate moments of high volatility.
+Combined Insights
+
+By examining both the WAP/bid/ask prices and the log returns together, one can correlate price levels with return patterns. For example, a large gap between the bid and ask prices could lead to more significant log returns due to larger price movements required to match buyers and sellers.
+
+The second plot's cumulative log return can help identify periods of sustained upward or downward price pressure. It's a visual tool that can signal trends within the intraday data that might not be evident from the raw log returns alone.
+
+### Naive AR(1) Model Prediction: Using Last Timestamp realized volatility as target
+
+Now we know how to build our predict target, let's using realized volatility of t_i-1 to predict t_i as predeiction benchmark.
+
+A commonly known fact about volatility is that it tends to be autocorrelated.
+
+The concept we are referring to is a basic forecasting technique for time series data where past values are used to predict future values. This method is often called a "naive" forecast because it assumes that the conditions affecting the system won't change much in the short term.
+
+In financial markets, the volatility of an asset is the degree to which its price fluctuates over time. An important characteristic of volatility is that it often shows autocorrelation.
+
+Autocorrelation means that the volatility from one time period is correlated with the volatility from adjacent time periods. In simpler terms, if the volatility is high today, there is a tendency that it might be high tomorrow as well, and vice versa.
+
+A naive model takes advantage of this property by using the realized volatility from the previous time period (say t_i-1) as the forecast for the next period (say t_i). For example, if we know the realized volatility for the first 10 minutes of trading, we might use this as our "prediction" for the realized volatility of the next 10 minutes.
+
+This approach is naive because it does not take into account any other information that could affect price fluctuations, such as market news, economic events, or changes in trading volume. It assumes that the future will be like the immediate past.
+
+Despite its simplicity, the naive model can sometimes be a tough benchmark to beat, especially in markets where conditions do not change drastically over short periods. It's a starting point in model development, providing a baseline against which more complex models can be compared. If a sophisticated model can't outperform the naive model, it may not be providing valuable predictive insight.
+
+In practice, while a naive model may not be the best strategy for making actual trading decisions due to its simplicity, it serves as an important benchmark in the model development process.
+
+### AR(1) Model Formula
+
+The AR(1) model is expressed as:
+
+RV_t = alpha + beta * RV_{t-1} + \epsilon_t
+
+where:
+- RV_t is the realized volatility at time t.
+- alpha is the intercept term (a constant).
+- beta is the autoregressive coefficient, representing the relationship between RV_t and RV_{t-1}.
+- epsilon_t is the error term (white noise) at time t.
+
+### Steps for Calculation and Prediction with Dummy Data
+
+[Example](https://www.notion.so/821588e3e88e46a18e40a6b7b4706dde?v=72c1e390d65e4f899bd6694752c1a82e&p=de645508caad45699db1496e79d4b1a6&pm=s)
+
+### Summary
+
+- **Model Fitting:** We used OLS to fit the AR(1) model, obtaining the intercept (\(\alpha\)) and autoregressive coefficient (\(\beta\)).
+- **Prediction:** Using the fitted model, we predicted the next period's realized volatility based on the previous period's volatility.
+
+This step-by-step approach demonstrates how to build and interpret an AR(1) model, leveraging the autocorrelation in realized volatility data to make predictions.
+
+#### Results & Interpretation:
 
 We've defined a function to calculate the Root Mean Squared Percentage Error (RMSPE), which is a commonly used metric to evaluate the performance of regression models when the target variable is continuous and strictly positive. The RMSPE is particularly popular in finance and stock market predictions because it normalizes the error based on the size of the true value, making it a relative error metric.
 
