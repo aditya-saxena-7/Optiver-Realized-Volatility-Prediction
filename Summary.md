@@ -355,7 +355,7 @@ where:
 
 This step-by-step approach demonstrates how to build and interpret an AR(1) model, leveraging the autocorrelation in realized volatility data to make predictions.
 
-### 13.cResults & Interpretation:
+### 13.Results & Interpretation:
 ---
 
 We've defined a function to calculate the Root Mean Squared Percentage Error (RMSPE), which is a commonly used metric to evaluate the performance of regression models when the target variable is continuous and strictly positive. The RMSPE is particularly popular in finance and stock market predictions because it normalizes the error based on the size of the true value, making it a relative error metric.
