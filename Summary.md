@@ -194,6 +194,17 @@ size: Represents the total number of shares or units traded in that specific sec
 
 order_count: Indicates the number of unique orders that were executed to reach the total trade size reported in the size column for that second. The first entry with order_count = 11 suggests that it took 11 separate orders to accumulate the 553 shares traded at that time.
 
+bid_size1 and bid_size2: Indicate the number of shares buyers are willing to purchase at the corresponding bid prices (bid_price1 and bid_price2). These sizes can be used to gauge market depth and buying interest at different price levels.
+
+ask_size1 and ask_size2: Reflect the number of shares sellers are ready to sell at the corresponding ask prices (ask_price1 and ask_price2). Similar to bid sizes, these provide insights into the market depth on the selling side.
+
+ask_spread: Calculated as ask_size1 - ask_size2, this represents the difference in volume between the closest and next-closest ask levels. It can indicate the liquidity or tightness of the ask side of the order book.
+
+bid_spread: Calculated as bid_size1 - bid_size2, this indicates the volume difference between the top two bid levels. It helps assess the liquidity or tightness on the bid side of the order book.
+
+volume_imbalance: The absolute difference between total bid volumes and total ask volumes (abs(ask_size1 + ask_size2 - bid_size1 - bid_size2)). It's a measure of the current supply-demand balance in the order book.
+
+
 Bid/Ask Spread
 The bid/ask spread is a measure of the difference between the highest price that buyers are willing to pay (bid price) and the lowest price that sellers are willing to accept (ask price). It's calculated as follows:
 
@@ -228,6 +239,61 @@ Combined Insights
 By examining both the WAP/bid/ask prices and the log returns together, one can correlate price levels with return patterns. For example, a large gap between the bid and ask prices could lead to more significant log returns due to larger price movements required to match buyers and sellers.
 
 The second plot's cumulative log return can help identify periods of sustained upward or downward price pressure. It's a visual tool that can signal trends within the intraday data that might not be evident from the raw log returns alone.
+
+### Implementing the Feature Construction
+
+Splitting the Data
+Based on observation and the plotted data, the idea is to divide the seconds in bucket into segments that likely represent different market conditions:
+
+Early Trading Period (0 to 150 seconds): Captures the opening minutes when trading volumes are typically high due to overnight news, early reactions, and other factors.
+
+Mid-Session (150 to 300 seconds and 300 to 450 seconds): Might capture more of the steady-state trading conditions during the middle part of the trading window.
+
+Late Trading Period (450+ seconds): Likely to encapsulate the closing rush, where traders adjust positions, and liquidity can surge again
+
+Resulting DataFrame and Its Implications
+The final DataFrame df_book_feature contains a rich set of features for each time_id, with each set corresponding to a specific interval of seconds within the bucket. These features include:
+
+Realized Volatility: Measures the volatility for each interval, providing insight into how turbulent the market was during that period.
+WAP Balance Mean: Indicates the average balance of weighted average prices, useful for understanding market direction.
+Price Spread Mean: Offers an average of the price differences, which can suggest liquidity or market tightness.
+Volume Imbalance Mean: Shows the average difference between buying and selling volumes, which can indicate market pressure.
+
+The image displays a heatmap of correlation coefficients between realized volatilities of log returns calculated at different intervals within the trading session (0 seconds, 150 seconds, 300 seconds, and 450 seconds). From the plot, we can observe the following:
+
+Strong Positive Correlations: All the correlation coefficients are positive and relatively high (ranging approximately from 0.73 to 0.85), indicating that there is a strong positive linear relationship between the realized volatilities at different time intervals. This suggests that if volatility is high during one interval, it is likely to be high in the others as well.
+
+Consistency Across Time Intervals: The relatively uniform correlation coefficients across different intervals (no extremely low or negative values) imply that the market exhibits somewhat consistent behavior in terms of volatility throughout these intervals. This consistency can be important for trading strategies that assume stable volatility patterns.
+
+No Perfect Correlation: While the correlations are strong, they are not perfect (not equal to 1), suggesting that there are differences in volatility patterns across different segments of the trading day. These differences can be exploited for timing trades or for risk management.
+
+Similarity in Adjacent Intervals: The higher correlations between adjacent intervals (e.g., 0-150 seconds with 150-300 seconds) compared to non-adjacent intervals (e.g., 0-150 seconds with 300-450 seconds) suggest that volatility does not change abruptly in short succession but might evolve throughout the trading session.
+
+Potential for Volatility Clustering: High correlations in financial time series often indicate volatility clustering, a phenomenon where high-volatility events are followed by high-volatility events, and low-volatility events are followed by low-volatility events. This could inform risk management strategies, as periods of high volatility could be expected to persist.
+
+In conclusion, the heatmap analysis supports the notion that volatility exhibits time-dependent patterns which are relatively stable within the observed intervals but still exhibit some variation. Traders and quantitative analysts could leverage this information to understand and predict market behavior, potentially adjusting their algorithms and strategies to reflect these findings.
+
+The plot reinforces the idea that market volatility does not drastically differ across the specified time intervals on average, which could be an indication of a market that has a consistent behavior in volatility terms through the trading day, at least across the intervals observed here.
+
+New plot
+
+This scatter plot visualizes the distribution of trades across different time_ids over the seconds_in_bucket. Here's what we can interpret from the image:
+
+Uniform Distribution of Trades: The plot shows a dense and uniform red area, indicating that trades are evenly distributed throughout the time for each time_id. This could suggest that trading is constant and occurs regularly throughout the trading session.
+
+Trade Activity Throughout the Day: Since there are data points spread across the entire range of seconds_in_bucket, it indicates that trades are happening at all times from the beginning to the end of each trading session.
+
+Gaps and Pauses in Trading: The lighter vertical lines, where the red is less intense, may indicate moments with fewer trades, suggesting brief periods of inactivity or lower trading volume.
+
+Alpha Transparency: The use of alpha=0.1 makes individual points nearly transparent. Areas that appear darker are where many points overlap, suggesting a higher density of trades.
+
+No Clear Patterns Over Time: The distribution appears random without any clear patterns or trends over different time_ids. This randomness implies that the trade frequency is not significantly changing over time across the different time intervals.
+
+High-Frequency Data: The granularity and high frequency of data points are evident, typical of high-frequency trading datasets. This level of detail is necessary for microstructure analysis and algorithmic trading strategies
+
+The key takeaway is that trading does not seem to concentrate at particular times within each session, and there are no immediately apparent anomalies or irregularities in trade timing. This plot provides a foundational understanding of trade distribution, which can be a starting point for more detailed time series analysis or to explore the impact of trades on price movements and volatility.
+
+
 
 ### Naive AR(1) Model Prediction: Using Last Timestamp realized volatility as target
 
