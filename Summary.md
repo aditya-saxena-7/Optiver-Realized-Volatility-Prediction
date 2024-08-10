@@ -2,7 +2,9 @@
 
 ### **1. Project Requirements:**
 ---
-The task is to develop predictive models that can accurately forecast short-term volatility of hundreds of stocks across various sectors. Volatility, in financial terms, refers to the degree of variation of a trading price series over time as measured by the standard deviation of logarithmic returns. In simpler terms, it measures how wildly prices swing up and down. This project requires handling and analyzing highly granular financial data—specifically, hundreds of millions of rows detailing stock movements over 10-minute periods.
+The task is to develop predictive models that can accurately forecast short-term volatility of hundreds of stocks across various sectors. Volatility, in financial terms, refers to the degree of variation of a trading price series over time as measured by the standard deviation of logarithmic returns. 
+
+In simpler terms, it measures how wildly prices swing up and down. 
 
 ### 2.🔍 **Why Predicting Volatility?**  
 ---
@@ -18,7 +20,6 @@ For trading firms like Optiver, predicting volatility is crucial for effectively
 **Trader Actions**:
 - **Reduce Position**: The trader sells a portion of their holdings to lock in profits and reduce exposure.
 - **Hedging**: The trader buys put options to protect against a possible drop in stock price.
-- **Day Trading**: The trader takes advantage of price swings by buying and selling within short periods to capture profits.
 
 **Low Realized Volatility**:
 
@@ -27,17 +28,6 @@ For trading firms like Optiver, predicting volatility is crucial for effectively
 **Trader Actions**:
 - **Increase Position**: The trader buys more shares, expecting stable returns.
 - **Covered Calls**: The trader sells covered call options to generate additional income, leveraging the stock's stability.
-- **Diversify**: The trader adds more of this stock to their portfolio to balance against more volatile tech stocks they hold.
-
-#### 2.2 Portfolio Considerations
-
-**High Volatility Portfolio**:
-- **Scenario**: A portfolio with high-volatility stocks might see significant daily fluctuations in value.
-- **Actions**: The trader might diversify into bonds, low-volatility stocks, or cash equivalents to stabilize returns and reduce risk.
-
-**Low Volatility Portfolio**:
-- **Scenario**: A portfolio with low-volatility stocks might provide steady but lower returns.
-- **Actions**: The trader might introduce some higher-volatility stocks or sectors to enhance potential returns while maintaining an overall balanced risk profile.
 
 ### 3. 🔍 Methodology
 ---
@@ -135,16 +125,6 @@ This measure captures the standard deviation of log returns, providing a quantit
 
 - **Statistical Properties**: Log returns are more likely to be normally distributed, which simplifies various statistical analyses, such as hypothesis testing and interval estimation.
 
-2. **Summing Squared Log Returns**:
-
-   - **Square Each Log Return**: Squaring each log return magnifies the impact of larger fluctuations while ensuring all values are positive.
-     
-   - **Sum of Squared Log Returns**: Summing these squared values gives us a measure of the total variability in the stock price over the observed period.
-
-3. **Square Root of the Sum**:
-   
-   - **Why Square Root**: Taking the square root of the sum of squared log returns converts our measure back to the original scale of the log returns, making it comparable to the standard deviation (a common measure of variability).
-
 #### 7.2 Intuition Behind the Formula:
 
 - **Log Returns Reflect Price Changes**: By using log returns, we capture the relative changes in stock prices over consecutive time periods.
@@ -212,24 +192,22 @@ P_3 = 108
 
 - **volume_imbalance:** The absolute difference between total bid volumes and total ask volumes (abs(ask_size1 + ask_size2 - bid_size1 - bid_size2)). It's a measure of the current supply-demand balance in the order book.
 
-- **Bid/Ask Spread**
+#### 9.1 **Bid/Ask Spread**
   
 The bid/ask spread is a measure of the difference between the highest price that buyers are willing to pay (bid price) and the lowest price that sellers are willing to accept (ask price). It's calculated as follows:
 
 Bid/Ask Spread = (Bid Price/Ask Price) - 1
 
--- **Market Liquidity**: A narrower bid/ask spread typically indicates greater liquidity, making it easier to execute trades near the market price without causing price movement. if bid/ask spread is higher, that means the liquidity for the single asset is not great. The lower the bid/ask spread the better the marekt liquidity for the specific asset.
+- **Market Liquidity**: A narrower bid/ask spread typically indicates greater liquidity, making it easier to execute trades near the market price without causing price movement. If bid/ask spread is higher, that means the liquidity for the single asset is not great. The lower the bid/ask spread the better the marekt liquidity for the specific asset.
 
--- **Transaction Costs**: For traders, a lower spread means lower transaction costs, as they can buy and sell closer to the mid-price.
+- **Transaction Costs**: For traders, a lower spread means lower transaction costs, as they can buy and sell closer to the mid-price.
 
--- **Market Sentiment**: Large spreads can also indicate higher uncertainty or lower confidence among traders regarding the asset's value.
+- **Market Sentiment**: Large spreads can also indicate higher uncertainty or lower confidence among traders regarding the asset's value.
 
 ### 10. EDA
 ---
 
-#### 10.1 First Plot: Weighted Average Price (WAP) and Best Bid/Ask Prices
-
-**Conclusions from the WAP Plot:**
+#### 10.1 First Plot: Weighted Average Price (WAP) and Best Bid, Ask Prices
 
 - **Price Movements:** The WAP, bid, and ask prices move in sync, as expected, since WAP is derived from these prices. Fluctuations in WAP reflect real-time changes in market conditions.
 
@@ -238,8 +216,6 @@ Bid/Ask Spread = (Bid Price/Ask Price) - 1
 - **Price Volatility:** The extent of fluctuation in the WAP line could be indicative of the volatility during this time period. Sharp movements in bid or ask prices that are mirrored in the WAP suggest rapid changes in market sentiment.
 
 #### 10.2 Second Plot: Log Return and Cumulative Log Return
-
-**Conclusions from the Log Return Plot:**
 
 - **Return Fluctuations:** The log returns fluctuate around zero, with no discernible trend, suggesting a market that doesn't have a strong directional movement in this time frame.
 
@@ -263,18 +239,16 @@ Based on observation and the plotted data, the idea is to divide the seconds in 
 
 - **Mid-Session (150 to 300 seconds and 300 to 450 seconds):** Might capture more of the steady-state trading conditions during the middle part of the trading window.
 
-- **Late Trading Period (450+ seconds):** Likely to encapsulate the closing rush, where traders adjust positions, and liquidity can surge again
+- **Late Trading Period (450+ seconds):** Likely to encapsulate the closing rush, where traders adjust positions, and liquidity can surge again.
 
 #### 11.2 Resulting DataFrame and Its Implications
 
-The final DataFrame df_book_feature contains a rich set of features for each time_id, with each set corresponding to a specific interval of seconds within the bucket. These features include:
+The final DataFrame df_book_feature contains a set of features for each time_id, with each set corresponding to a specific interval of seconds within the bucket. These features include:
 
 - **Realized Volatility:** Measures the volatility for each interval, providing insight into how turbulent the market was during that period.
   
 - **WAP Balance Mean:** Indicates the average balance of weighted average prices, useful for understanding market direction.
-  
-- **Price Spread Mean:** Offers an average of the price differences, which can suggest liquidity or market tightness.
-  
+    
 - **Volume Imbalance Mean:** Shows the average difference between buying and selling volumes, which can indicate market pressure.
 
 The image displays a heatmap of correlation coefficients between realized volatilities of log returns calculated at different intervals within the trading session (0 seconds, 150 seconds, 300 seconds, and 450 seconds). From the plot, we can observe the following:
@@ -289,8 +263,6 @@ The image displays a heatmap of correlation coefficients between realized volati
 
 - **Potential for Volatility Clustering:** High correlations in financial time series often indicate volatility clustering, a phenomenon where high-volatility events are followed by high-volatility events, and low-volatility events are followed by low-volatility events. This could inform risk management strategies, as periods of high volatility could be expected to persist.
 
-In conclusion, the heatmap analysis supports the notion that volatility exhibits time-dependent patterns which are relatively stable within the observed intervals but still exhibit some variation. 
-
 The plot reinforces the idea that market volatility does not drastically differ across the specified time intervals on average, which could be an indication of a market that has a consistent behavior in volatility terms through the trading day, at least across the intervals observed here.
 
 ### 12. Third Plot: Trade Order vs time_id
@@ -299,17 +271,9 @@ This scatter plot visualizes the distribution of trades across different time_id
 
 - **Uniform Distribution of Trades:** The plot shows a dense and uniform red area, indicating that trades are evenly distributed throughout the time for each time_id. This could suggest that trading is constant and occurs regularly throughout the trading session.
 
-- **Trade Activity Throughout the Day:** Since there are data points spread across the entire range of seconds_in_bucket, it indicates that trades are happening at all times from the beginning to the end of each trading session.
-
-- **Gaps and Pauses in Trading:** The lighter vertical lines, where the red is less intense, may indicate moments with fewer trades, suggesting brief periods of inactivity or lower trading volume.
-
-- **Alpha Transparency:** The use of alpha=0.1 makes individual points nearly transparent. Areas that appear darker are where many points overlap, suggesting a higher density of trades.
-
 - **No Clear Patterns Over Time:** The distribution appears random without any clear patterns or trends over different time_ids. This randomness implies that the trade frequency is not significantly changing over time across the different time intervals.
 
-- **High-Frequency Data:** The granularity and high frequency of data points are evident, typical of high-frequency trading datasets. This level of detail is necessary for microstructure analysis and algorithmic trading strategies
-
-The key takeaway is that trading does not seem to concentrate at particular times within each session, and there are no immediately apparent anomalies or irregularities in trade timing. This plot provides a foundational understanding of trade distribution, which can be a starting point for more detailed time series analysis or to explore the impact of trades on price movements and volatility.
+The key takeaway is that trading does not seem to concentrate at particular times within each session, and there are no immediately apparent anomalies or irregularities in trade timing. 
 
 ### 12. Naive AR(1) Model Prediction: Using Last Timestamp realized volatility as target
 ---
@@ -324,13 +288,15 @@ In financial markets, the volatility of an asset is the degree to which its pric
 
 Autocorrelation means that the volatility from one time period is correlated with the volatility from adjacent time periods. In simpler terms, if the volatility is high today, there is a tendency that it might be high tomorrow as well, and vice versa.
 
-A naive model takes advantage of this property by using the realized volatility from the previous time period (say t_i-1) as the forecast for the next period (say t_i). For example, if we know the realized volatility for the first 10 minutes of trading, we might use this as our "prediction" for the realized volatility of the next 10 minutes.
+A naive model takes advantage of this property by using the realized volatility from the previous time period (say t_i-1) as the forecast for the next period (say t_i). 
+
+For example, if we know the realized volatility for the first 10 minutes of trading, we might use this as our "prediction" for the realized volatility of the next 10 minutes.
 
 This approach is naive because it does not take into account any other information that could affect price fluctuations, such as market news, economic events, or changes in trading volume. It assumes that the future will be like the immediate past.
 
-Despite its simplicity, the naive model can sometimes be a tough benchmark to beat, especially in markets where conditions do not change drastically over short periods. It's a starting point in model development, providing a baseline against which more complex models can be compared. If a sophisticated model can't outperform the naive model, it may not be providing valuable predictive insight.
+Despite its simplicity, the naive model can sometimes be a tough benchmark to beat, especially in markets where conditions do not change drastically over short periods. 
 
-In practice, while a naive model may not be the best strategy for making actual trading decisions due to its simplicity, it serves as an important benchmark in the model development process.
+It's a starting point in model development, providing a baseline against which more complex models can be compared. If a sophisticated model can't outperform the naive model, it may not be providing valuable predictive insight.
 
 #### 12.1 AR(1) Model Formula
 
@@ -350,7 +316,8 @@ where:
 
 #### 12.3 Summary
 
-- **Model Fitting:** We used OLS to fit the AR(1) model, obtaining the intercept (\(\alpha\)) and autoregressive coefficient (\(\beta\)).
+- **Model Fitting:** We used OLS to fit the AR(1) model, obtaining the intercept (alpha) and autoregressive coefficient (beta).
+- 
 - **Prediction:** Using the fitted model, we predicted the next period's realized volatility based on the previous period's volatility.
 
 This step-by-step approach demonstrates how to build and interpret an AR(1) model, leveraging the autocorrelation in realized volatility data to make predictions.
@@ -358,14 +325,17 @@ This step-by-step approach demonstrates how to build and interpret an AR(1) mode
 ### 13.Results & Interpretation:
 ---
 
-We've defined a function to calculate the Root Mean Squared Percentage Error (RMSPE), which is a commonly used metric to evaluate the performance of regression models when the target variable is continuous and strictly positive. The RMSPE is particularly popular in finance and stock market predictions because it normalizes the error based on the size of the true value, making it a relative error metric.
+We've defined a function to calculate the Root Mean Squared Percentage Error (RMSPE), which is a commonly used metric to evaluate the performance of regression models when the target variable is continuous and strictly positive. .
 
 The RMSPE function calculates the square root of the average squared percentage errors between the actual values (`y_true`) and the predicted values (`y_pred`).
 
-We then calculate the R-squared (R2) score, which provides a measure of how well the variability of the target is explained by the model's predictions. An R2 score of 1 indicates perfect correlation, while a score of 0 indicates no correlation.
+We then calculate the R-squared (R2) score, which provides a measure of how well the variability of the target is explained by the model's predictions. 
 
 - **R2 score**: With a value of 0.628, the naive model explains about 62.8% of the variability in the target. This is a fairly decent score for a naive model and indicates some level of predictive power.
 
 - **RMSPE**: A value of 0.341 means that, on average, the predictions of the naive model deviate from the actual realized volatilities by 34.1%. This value gives an idea of the error magnitude in relation to the actual volatility values.
 
-The performance metrics suggest that while the naive model has a certain predictive capability, there is still room for improvement. The R2 score shows a positive correlation, but the RMSPE indicates that the predictions are not very close to the actual values in percentage terms, which could be critical when making trading decisions or managing risk. The goal in a predictive modeling task would be to develop a model that increases the R2 score and decreases the RMSPE.
+The performance metrics suggest that while the naive model has a certain predictive capability, there is still room for improvement. 
+
+The R2 score shows a positive correlation, but the RMSPE indicates that the predictions are not very close to the actual values in percentage terms, which could be critical when making trading decisions or managing risk. 
+
